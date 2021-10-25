@@ -1,18 +1,25 @@
 ---
 title: "UCLA PoliSci Methods Mavens Resources"
 description: |
-  Welcome to the website. I hope you enjoy it!
+  A clearinghouse for R/Stats resources for political science graduate students.
 site: distill::distill_website
 ---
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = FALSE)
-
-# Learn more about creating websites with Distill at:
-# https://rstudio.github.io/distill/website.html
-
-# Learn more about publishing to GitHub Pages at:
-# https://rstudio.github.io/distill/publish_website.html#github-pages
-
 ```
+
+Welcome to our website! We hope these resources are useful in your methods careers.
+
+Our intention for this site is to create a repository of R/Stats learning resources, which will include:
+
+- various web self-study courses
+
+- materials created for departmental R camps
+
+- tutorials and problems created by TAs in the context of 200B-D
+
+If you have suggestions for additional topics you want covered, please let us know and we would be happy to organize on your behalf.
+
+![xkcd1513](https://imgs.xkcd.com/comics/code_quality.png)
 
