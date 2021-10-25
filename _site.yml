@@ -3,7 +3,9 @@ title: "UCLA PoliSci Methods Mavens Resources"
 description: |
   UCLA PoliSci Methods Mavens Resources
 output_dir: "docs"
+base_url: https://www.methodsmavens-psucla.github.io
 navbar:
+  search: false
   right:
     - text: "Home"
       href: index.html
