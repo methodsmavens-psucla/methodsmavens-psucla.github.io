@@ -9,8 +9,6 @@ navbar:
   right:
     - text: "Home"
       href: index.html
-    - text: "Resources"
-      href: Resources.html
     - text: "Mavens"
       href: about.html
 collections:
