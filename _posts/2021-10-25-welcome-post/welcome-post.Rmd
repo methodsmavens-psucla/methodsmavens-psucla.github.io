@@ -7,6 +7,7 @@ description: |
 author:
   - name: Derek Holliday
 date: 2021-10-25
+preview: HelloWorld.svg
 output:
   distill::distill_article:
     self_contained: false

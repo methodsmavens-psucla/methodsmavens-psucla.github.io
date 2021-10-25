@@ -1,1 +1,21 @@
-[]
+[
+  {
+    "path": "posts/2021-10-25-welcome-post/",
+    "title": "Welcome Post",
+    "description": "Our first post!",
+    "author": [
+      {
+        "name": "Derek Holliday",
+        "url": {}
+      }
+    ],
+    "date": "2021-10-25",
+    "categories": [
+      "announcements"
+    ],
+    "contents": "\r\nWelcome! This page is where posts will be indexed. These will include videos and guides created by mavens and lists of external resources we have found useful.\r\nHello World\r\n\r\n\r\n",
+    "preview": "posts/2021-10-25-welcome-post/HelloWorld.svg",
+    "last_modified": "2021-10-25T16:30:39-07:00",
+    "input_file": {}
+  }
+]

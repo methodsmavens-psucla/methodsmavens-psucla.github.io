@@ -8,5 +8,15 @@
 </description>
     <generator>Distill</generator>
     <lastBuildDate>Mon, 25 Oct 2021 00:00:00 +0000</lastBuildDate>
+    <item>
+      <title>Welcome Post</title>
+      <dc:creator>Derek Holliday</dc:creator>
+      <link>https://methodsmavens-psucla.github.io/posts/2021-10-25-welcome-post</link>
+      <description>Our first post!</description>
+      <category>announcements</category>
+      <guid>https://methodsmavens-psucla.github.io/posts/2021-10-25-welcome-post</guid>
+      <pubDate>Mon, 25 Oct 2021 00:00:00 +0000</pubDate>
+      <media:content url="https://methodsmavens-psucla.github.io/posts/2021-10-25-welcome-post/HelloWorld.svg" medium="image" type="image/svg+xml"/>
+    </item>
   </channel>
 </rss>
