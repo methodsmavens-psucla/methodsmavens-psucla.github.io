@@ -5,8 +5,8 @@
       "title": "About Your Mavens",
       "description": "Roles, office hours, backgrounds, and more.\n",
       "author": [],
-      "contents": "\r\n\r\nContents\r\nSite Administrators\r\nDerek Holliday - R Maven\r\nCiara Sterbenz - Math Maven\r\n\r\nSite Contributers\r\nAlex Rossell Hayes\r\nDoeun Kim\r\n\r\n\r\nSite Administrators\r\nIn charge of routine site upkeep/content moderation.\r\nDerek Holliday - R Maven\r\nDerek is a 5th year graduate student in American Politics. His methodological interests include machine learning, text-as-data, and survey experiments.\r\nOffice hours:\r\nTues/Thurs 1-3:30PM (in-person Bunche 4337)\r\nWed 10AM-12PM (Virtual, email for zoom link)\r\nContact: deholliday at ucla dot edu\r\nPersonal website: derekholliday.com\r\nCiara Sterbenz - Math Maven\r\nOffice hours:\r\nMon 10:30AM-2PM\r\nTues 9AM-12:30PM\r\nContact: cster at ucla dot edu\r\nSite Contributers\r\nOther methods mavens contributing content to this site\r\nAlex Rossell Hayes\r\nDoeun Kim\r\n\r\n\r\n\r\n",
-      "last_modified": "2021-10-25T16:33:21-07:00"
+      "contents": "\r\n\r\nContents\r\nSite Administrators\r\nDerek Holliday - R Maven\r\nCiara Sterbenz - Math Maven\r\n\r\nSite Contributers\r\nAlex Rossell Hayes - R Maven\r\nDoeun Kim - R Maven\r\n\r\n\r\nSite Administrators\r\nIn charge of routine site upkeep/content moderation.\r\nDerek Holliday - R Maven\r\nDerek is a 5th year graduate student in American Politics. His methodological interests include machine learning, text-as-data, and survey experiments.\r\nOffice hours:\r\nTues/Thurs 1-3:30PM (in-person Bunche 4337)\r\nWed 10AM-12PM (Virtual, email for zoom link)\r\nContact: deholliday at ucla dot edu\r\nPersonal website: derekholliday.com\r\nCiara Sterbenz - Math Maven\r\nOffice hours:\r\nMon 10:30AM-2PM\r\nTues 9AM-12:30PM\r\nContact: cster at ucla dot edu\r\nSite Contributers\r\nOther methods mavens contributing content to this site\r\nAlex Rossell Hayes - R Maven\r\nOffice hours:\r\nMon 12-1PM\r\nSat/Sun 10:20AM-1:30PM\r\nContact: alexhayes at ucla dot edu\r\nDoeun Kim - R Maven\r\nOffice hours:\r\nTues 3-5:30PM (offline/online)\r\nFri 12-1PM / 2-5:30PM (online)\r\nContact: doeun2+Rmaven at ucla dot edu\r\n\r\n\r\n\r\n",
+      "last_modified": "2021-10-25T19:06:09-07:00"
     },
     {
       "path": "index.html",
@@ -14,7 +14,7 @@
       "description": "A clearinghouse for R/Stats resources for political science graduate students.\n",
       "author": [],
       "contents": "\r\n\r\n\r\n\r\n",
-      "last_modified": "2021-10-25T16:33:21-07:00"
+      "last_modified": "2021-10-25T19:06:10-07:00"
     }
   ],
   "collections": ["posts/posts.json"]

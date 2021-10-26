@@ -41,7 +41,20 @@ Contact: cster **at** ucla **dot** edu
 
 Other methods mavens contributing content to this site
 
-## Alex Rossell Hayes
+## Alex Rossell Hayes - R Maven
 
-## Doeun Kim
+Office hours:
 
+-  Mon 12-1PM
+-  Sat/Sun 10:20AM-1:30PM
+
+Contact: alexhayes **at** ucla **dot** edu
+
+## Doeun Kim - R Maven
+
+Office hours:
+
+-  Tues 3-5:30PM (offline/online)
+-  Fri 12-1PM / 2-5:30PM (online)
+
+Contact: doeun2+Rmaven **at** ucla **dot** edu
