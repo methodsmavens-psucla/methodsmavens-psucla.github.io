@@ -1,5 +1,24 @@
 [
   {
+    "path": "posts/2021-10-31-external-resources-for-r-beginners/",
+    "title": "External Resources for R Beginners",
+    "description": "A collection of R resources from around the coding world.",
+    "author": [
+      {
+        "name": "Derek Holliday",
+        "url": {}
+      }
+    ],
+    "date": "2021-10-31",
+    "categories": [
+      "resources"
+    ],
+    "contents": "\r\nAs mavens, we will provide you with custom resources and tutorials tailored to your needs as political science graduate students. However, much of learning R is experimenting with multiple learning styles and pulling from different sources, so we want to introduce you to a few external resources we consider to be (1) high in quality and (2) relevant to your particular needs. All of these resources are free (with the exception of one). No one person learns R in the same was as another, and that’s part of the fun!\r\nderekholliday.com\r\nTraditional Courses\r\nMany people find the traditional university course structure to be good for personal accountability. There are a number of intro to R courses online that fit this description:\r\nJohns Hopkins Data Science: Foundations using R Specialization (via coursera).\r\nHarvard Statistics and R (via edX, Life Science focus but the earlier parts are still a good introduction)\r\ncodecademy’s Learn R (requires a subscription, but slightly more interactive than the other courses)\r\nVideos and Books\r\nA slightly more hands-off approach, these resources give you a number of videos and examples you can pick and choose between and explore at your own pace:\r\nR for Data Science aka “The Bible” written by Hadley Wickham and Garrett Grolemund (you’ll be seeing those names quite a bit), this is the definitive source for a “tidy” textbook introduction R for our purposes.\r\nRStudio Primers written by the folks over at RStudio themselves, so you get the best practices straight from the source.\r\nSICSS Boot Camp for an option in between a true course and pick-and-choose video options.\r\nInteractive Materials\r\nOne of the greatest pedagogical advancements for R in the past few years is the availability of within-IDE tutorials for R beginners. You can boot up RStudio, load a lesson via one of these packages, and just follow directions from there, so you are truly able to learn while doing:\r\nKosuke Imai’s Quantitative Social Science: An Introduction via swirl is especially good with the introductory courses, and best used as a prerequisite to the materials that follow.\r\nSeo-young Silvia Kim’s introduction to the tidyverse via swirl is an amazing resource for beginners looking to tidy their approach to R.\r\nIt is also worth noting that swirl itself has its own courses, but they haven’t been updated for a few years.\r\nTwitter\r\nTwitter provides a great place to keep up with the latest and greatest in R tutorials, packages, and advancements. There are too many amazing accounts to list here, but I will suggest following We are R-Ladies, Hadley Wickham, and Julia Silge as active R Twitter users.\r\nA Closing Word\r\nAs new acolytes of R, you should be familiar that there is an ongoing boycott of a certain provider of R resources that we have purposefully left off this list. You should be aware that the boycott exists and can learn about the reasons why here.\r\n\r\n\r\n\r\n",
+    "preview": "posts/2021-10-31-external-resources-for-r-beginners/rresources.png",
+    "last_modified": "2021-10-31T19:59:40-07:00",
+    "input_file": {}
+  },
+  {
     "path": "posts/2021-10-25-welcome-post/",
     "title": "Welcome Post",
     "description": "Our first post!",

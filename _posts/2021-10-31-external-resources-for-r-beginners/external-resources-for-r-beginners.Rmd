@@ -1,0 +1,63 @@
+---
+title: "External Resources for R Beginners"
+categories:
+  - resources
+description: |
+  A collection of R resources from around the coding world.
+author:
+  - name: Derek Holliday
+    url: {}
+date: 2021-10-31
+preview: rresources.png
+output:
+  distill::distill_article:
+    self_contained: false
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+As mavens, we will provide you with custom resources and tutorials tailored to your needs as political science graduate students. However, much of learning R is experimenting with multiple learning styles and pulling from different sources, so we want to introduce you to a few external resources we consider to be (1) high in quality and (2) relevant to your particular needs. All of these resources are free (with the exception of one). No one person learns R in the same was as another, and that's part of the fun!
+
+<a href="https://www.derekholliday.com" target="_blank">derekholliday.com</a>
+
+## Traditional Courses
+
+Many people find the traditional university course structure to be good for personal accountability. There are a number of intro to R courses online that fit this description:
+
+- <a href="https://www.coursera.org/specializations/data-science-foundations-r?ranMID=40328&ranEAID=eWwXyydyhzs&ranSiteID=eWwXyydyhzs-VgMIdv5IjnLG3YGA7OAEBw&siteID=eWwXyydyhzs-VgMIdv5IjnLG3YGA7OAEBw&utm_content=10&utm_medium=partners&utm_source=linkshare&utm_campaign=eWwXyydyhzs" target="_blank">Johns Hopkins Data Science: Foundations using R Specialization</a> (via coursera).
+
+- <a href="https://www.edx.org/course/statistics-and-r" target="_bank">Harvard Statistics and R</a> (via edX, Life Science focus but the earlier parts are still a good introduction)
+
+- <a href="https://www.codecademy.com/learn/learn-r" target="_blank">codecademy's Learn R</a> (requires a subscription, but slightly more interactive than the other courses)
+
+## Videos and Books
+
+A slightly more hands-off approach, these resources give you a number of videos and examples you can pick and choose between and explore at your own pace:
+
+- <a href="https://r4ds.had.co.nz/" target="_blank">R for Data Science</a> aka "The Bible" written by Hadley Wickham and Garrett Grolemund (you'll be seeing those names quite a bit), this is the definitive source for a "tidy" textbook introduction R for our purposes.
+
+- <a href="https://rstudio.cloud/learn/primers" target="_blank">RStudio Primers</a> written by the folks over at RStudio themselves, so you get the best practices straight from the source.
+
+- <a href="https://sicss.io/boot_camp/" target="_blank">SICSS Boot Camp</a> for an option in between a true course and pick-and-choose video options.
+
+## Interactive Materials
+
+One of the greatest pedagogical advancements for R in the past few years is the availability of within-IDE tutorials for R beginners. You can boot up RStudio, load a lesson via one of these packages, and just follow directions from there, so you are truly able to learn while doing:
+
+- <a href="https://github.com/kosukeimai/qss-swirl" target="_blank">Kosuke Imai's Quantitative Social Science: An Introduction</a> via <a href="https://swirlstats.com/" target="_blank">swirl</a> is especially good with the introductory courses, and best used as a prerequisite to the materials that follow.
+
+- <a href="https://github.com/sysilviakim/swirl-tidy" target="_blank">Seo-young Silvia Kim's introduction to the tidyverse</a> via <a href="https://swirlstats.com/" target="_blank">swirl</a> is an amazing resource for beginners looking to tidy their approach to R.
+
+It is also worth noting that <a href="https://swirlstats.com/" target="_blank">swirl</a> itself has its own courses, but they haven't been updated for a few years.
+
+## Twitter
+
+Twitter provides a great place to keep up with the latest and greatest in R tutorials, packages, and advancements. There are too many amazing accounts to list here, but I will suggest following <a href="https://twitter.com/WeAreRLadies" target="_blank">We are R-Ladies</a>, <a href="https://twitter.com/hadleywickham" target="_blank">Hadley Wickham</a>, and <a href="https://twitter.com/juliasilge" target="_blank">Julia Silge</a> as active R Twitter users.
+
+### A Closing Word
+
+As new acolytes of R, you should be familiar that there is an ongoing boycott of a certain provider of R resources that we have purposefully left off this list. You should be aware that the boycott exists and can learn about the reasons why <a href="https://dnlmc.medium.com/dont-use-datacamp-ef04adcf1b7f" target="_blank">here</a>.
+
+
