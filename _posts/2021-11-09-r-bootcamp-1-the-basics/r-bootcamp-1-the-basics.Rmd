@@ -1,5 +1,7 @@
 ---
 title: "R Bootcamp #1: The Basics"
+categories:
+  - bootcamp
 description: |
   An introduction to basic R functions, data types, and structures
 author:
@@ -21,7 +23,7 @@ If you haven't already, you should install <a href="https://www.r-project.org/" 
 
 # Video Summary
 
-![](https://youtu.be/CNQ7KP7Kdr0)
+<iframe width="560" height="315" src="https://www.youtube.com/watch?v=CNQ7KP7Kdr0" frameborder="0" allowfullscreen></iframe>
 
 # What is R?
 
