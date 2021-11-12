@@ -1,0 +1,454 @@
+---
+title: "R Bootcamp #1: The Basics"
+description: |
+  An introduction to basic R functions, data types, and structures
+author:
+  - name: Derek Holliday
+    url: {}
+date: 2021-11-09
+output:
+  distill::distill_article:
+    self_contained: false
+---
+
+Welcome to R bootcamp! Over the next few posts, we will cover basic R functionality necessary for your growth as social scientists.
+
+# Structure and Setup
+
+Each tutorial will focus on one facet of R programming and can consist of a number of resources. Some will be done in video format, others more as long-form written tutorials, and some with more interactive components (or a combination of the 3). They are designed so that you can complete them in one or two sittings (think of them as a class session). Tutorials may be created by more than one Maven/TA, so you have the opportunity to see different approaches and styles. You are encouraged to reach out to us if you ever get stuck, we're here to help!
+
+If you haven't already, you should install <a href="https://www.r-project.org/" target="_blank">R</a> and <a href="https://www.rstudio.com/products/rstudio/download/#download" target="_blank">RStudio</a>.
+
+# Video Summary
+
+![](https://youtu.be/CNQ7KP7Kdr0)
+
+# What is R?
+
+R is a programming language designed for statistical computing. One of its main draws is that R is free and open source, meaning it is openly available for modification and distribution. The result is an incredibly vibrant user base active in creating new and exciting ways to use the language. It also means online help is easy to come by! R is becoming more and more popular in academia and industry for data analysis... pretty much anything you can do in Python can be done in R and vice-versa.
+
+While you can run R code via the built-in graphical user interface (RGui), the dominant preference is using RStudio. RStudio is an integrated development environment (IDE) that gives you all the tools needed to program. The main benefit is the ability to write and test scripts on the fly without having to enter commands one at a time.
+
+For a more detailed summary of navigating RStudio, watch the video provided with this tutorial.
+
+# Basic R Commands
+
+Now for some basic functionalities within R. If you've had previous experience with R or any other programming language, this should be familiar to you and you can go through this quickly.
+
+## Assignment
+
+R is an object oriented programming language, meaning the basic building block when coding is some object that has an associated value.
+
+To assign a value to a variable, we use an assignment operator. `<-` is the most commonly used assignment operator amongst R users, but many who come from a more programming-oriented background (myself included) use `=`.
+
+```{r}
+a <- 1 # assign the variable 'a' the value of 1
+a # print
+```
+
+The first line of code above makes the assignment, and the second of just entering `a` asks R to give you the value of that variable. The same thing works using `=`:
+
+```{r}
+b = 2
+b
+```
+
+## Math
+
+R can be used as a calculator using both numbers and the variables you assign values to. R follows PEMDAS, but `()` are recommended for readability.
+
+```{r, collapse = T}
+5 + 6 # addition
+9 - 3 # subtraction
+6 / 10 # division
+5 * 8 # multiplication
+5 ^ 2 # exponentiation
+sqrt(25) # square roots, etc...
+```
+
+Note the different structure of `sqrt()`. This is a **function**, where 25 is the **value** provided to the first **argument** of the function. We will get into more complex functions later, but is important you understand the language behind them. Also note you can perform multiple operations at once, but remember your order of operations!
+
+```{r, collapse = T}
+5 + 3 ^ 2 / 3 - 10
+(5 + 3)^2 / (3 - 10)
+```
+
+## Variables
+
+Variables are the workhorse objects of R. They store whatever you give them (what we did above with `a` and `b`).
+
+There are many naming conventions for variables, and it tends to depend on your personal style:
+
+```{r, eval = F}
+some_use_snake_case
+others.use.periods
+googleUsesCamelCase
+```
+
+This is entirely a matter of preference. I tend to use snake case because many of the base R functions use periods and shouldn't be overwritten (such as `is.matrix()`), but that isn't unique to periods (for example, the `read_dta()` function from the `haven` package).
+
+We can now perform operations using variables:
+
+```{r}
+x = 10
+y = 15
+x + y
+```
+
+Once a variable is stored, it is kept in your system's global environment until overwritten or you shut down your R session. Remember the values of `a` and `b` from above?
+
+```{r}
+a + b
+```
+
+Variables don't have to be numeric. For example, we can assign a **character string** to `x`, overwriting its previous value:
+
+```{r}
+x = 'This is a character string'
+x
+```
+
+Either single or double quotations work, just be consistent. Now that we've overwritten the value of `x`, look at what happens when we try to mix types in a function:
+
+```{r, error = T}
+x + y
+```
+
+You should be wary of performing operations on mixed types, as they can lead to unexpected outcomes. R is a fairly lenient language... if it can do something, it'll do it without warning you that something might be fishy.
+
+To check what kind of variable you have, you can use `class()`:
+
+```{r,collapse = T}
+class(x)
+class(y)
+```
+
+Another type of variable is a boolean. These take simple TRUE/FALSE values:
+
+```{r, collapse=T}
+my_boolean = T
+my_other_boolean = FALSE
+
+my_boolean
+my_other_boolean
+```
+
+You can use the single letters T/F and the written versions TRUE/FALSE interchangeably. Just make sure to NEVER assign a value to `T` or `F` unless you want to break something.
+
+## Vectors
+
+So far we've worked with variables with only one object in them:
+
+```{r}
+length(x) # returns number of objects inside a variable
+```
+
+These are called **scalars** and are actually fairly rare in our day-to-day work, since we tend to want to perform operations on variables holding multiple objects. These variables are called **vectors**:
+
+```{r, collapse = T}
+my_vector = c(1,2,3,4,5,6)
+my_vector
+class(my_vector)
+length(my_vector)
+```
+
+Notice that `c()` is a function that `combines` or `concatenates` objects together. Note that all the objects in a vector need to be the same class. Let's see what happens when we combine character and numeric objects together:
+
+```{r, collapse = T}
+vector2 = c(1,2,3,'dog')
+vector2
+class(vector2)
+```
+
+What did it do to the numeric elements? Note that it will ALWAYS default to ALL characters if you have a single non-numeric item in the vector.
+
+In sum, you can have vectors of single type scalars:
+
+```{r, collapse = T}
+my_numeric_vector = c(1,10,20,30,50,100)
+my_character_vector = c('cool','this','is','a','character','vector')
+my_boolean_vector = c(T,T,T,F,F,T)
+```
+
+### Naming vectors
+
+Sometimes it can be useful to assign names to objects in vectors to keep track of values associated with certain things. Let's say I want to assign batting averages to baseball players on the Los Angeles Dodgers. I'll create a vector of batting averages, then assign names to the averages using the `names()` function:
+
+```{r}
+batting_average = c(.338, .306, .278, .264)
+names(batting_average) = c("Trea Turner", "Corey Seager", "Justin Turner", "Mookie Betts")
+batting_average
+```
+
+What if I want to reuse those names for other vectors, but don't want to copy and paste them every time? You can create a vector of names and use that for assignment instead:
+
+```{r}
+games_played = c(52, 95, 151, 122)
+player_names = c("Trea Turner", "Corey Seager", "Justin Turner", "Mookie Betts")
+names(games_played) = player_names
+games_played
+```
+
+### Manipulating vectors
+
+Vectors allow for some advanced calculations:
+
+```{r, collapse = T}
+a <- c(1,2,3,4,5)
+b <- c(1,5,2,6,3)
+sum(a)
+sum(b)
+```
+
+Notice what happens when you add these together (this is unique to vector based code!):
+
+```{r}
+a + b
+```
+
+The default R behavior is to perform **element-wise** operations: functions are applied to elements of the same position. Note that R will still perform operations on vectors of different lengths, but give a warning message and recycle elements from the shorter vector.
+
+Some other things you can do with vectors:
+
+```{r, collapse = T}
+a > b  # Greater than
+a < b  # Less than
+a >= b # Greater than or equal to
+a <= b # Less than or equal to
+a == b # Equal to
+a != b # Not equal to
+```
+
+You can also locate items within vectors using bracket operators:
+
+```{r, collapse = T}
+b[2]       # second element
+b[1:3]     # elements 1 through 3
+b[c(2,4)]  # elements 2 and 4
+b[-5]      # not element 5
+b[-(2:3)]  # not elements 2 through 3
+b[-c(2,4)] # not elements 2 and 4
+```
+
+You can do some pretty advanced selections, too. Let's say you want to pull out the values of every object in a vector that is positive:
+
+```{r, collapse = T}
+vec <- c(-2,-5,-7,2,5,-3,12)
+vec > 0 # notice the boolean vector returned
+vec[vec == 12] # this pulls out every value that corresponds to the argument
+```
+
+## Matrices: 2-dimensional arrays of data
+
+Moving now from single vectors of data to 2 dimensional arrays (think of spreadsheets with rows and columns!) called matrices. Note that matrices are used frequently when you are doing statistical analyses. You won't use explicitly use them very often, at least at first, with your own data analysis but you will be using them frequently in your statistics courses.
+
+Let's create a 2x2 empty matrix:
+
+```{r}
+matrix(nrow=2,ncol=2)
+```
+
+At this point we should pause to discuss functions again. `matrix` is a function that creates a matrix and takes a number of arguments. Here, we are just providing values for two: `nrow` and `ncol`. To see the full list of arguments take by a function and how it works, simply type `?functionName` into the console to display a help menu.
+
+You can create a matrix with specific values:
+
+```{r}
+matrix(data = c(1,2,3,4),nrow=2,ncol=2)
+```
+
+Notice it fills it in by column by default. You can fill it in the other way, by row:
+
+```{r}
+matrix(data = c(1,2,3,4),nrow=2,ncol=2,byrow=T)
+```
+
+Let's do a bigger matrix:
+
+```{r}
+matrix(1:28,nrow=4)
+```
+
+Notice that I don't need to tell it number of columns because it will calculate how many columns needed to fill in 4 rows with 28 objects. What happens if I misspecify?
+
+```{r, error = T, warning = F}
+myMatrix <- matrix(1:25,nrow=4)
+myMatrix
+```
+
+Notice that IT WILL STILL CREATE THE MATRIX but will return an error. Look at what it does to the extra values that weren't specified. If you mess up and mis-specify the matrix and don't pay attention, you can create grave errors this way.
+
+You can give the matrix rownames and column names:
+
+```{r}
+rownames(myMatrix) <- c('row1','row2','row3','row4')
+colnames(myMatrix) <- c('a','b','c','d','e','f','g')
+myMatrix
+```
+
+You can add rows and columns to the matrix using two useful commands `rbind` and `cbind`:
+
+```{r}
+row5 <- 1:7
+rbind(myMatrix,row5)
+```
+
+Note what happens after you add that, though:
+
+```{r}
+myMatrix
+```
+
+It isn't permanently added until you save it:
+
+```{r}
+myMatrix <- rbind(myMatrix,row5)
+myMatrix
+```
+
+Let's add a column now:
+
+```{r}
+h <- c(1,2,3,4,5)
+myMatrix <- cbind(myMatrix,h)
+myMatrix
+```
+
+### Selecting objects from a 2 dimension array
+
+You can use bracket operators to select objects from a 2-dimensional array as well. You just need to specify the row and column in this format `matrix[row,column]`
+
+```{r}
+myMatrix[1,2] # row 1, column 2
+myMatrix[1,] # return EVERYTHING in row 1
+myMatrix[,2] # return EVERYTHING in column 2
+```
+
+Or you can be more advanced. Let's select row 1 and 5 for column 2 and 4:
+
+```{r}
+myMatrix[c(1,5),c(2,4)]
+```
+
+Or rows 1 through 4 of columns 2 through 4:
+
+```{r}
+myMatrix[1:4,2:4]
+```
+
+You can do calculations with matrices:
+
+```{r, collapse = T}
+myMatrix * 2
+myMatrix / 2
+myMatrix * myMatrix # This is element-wise
+t(myMatrix) # transpose
+```
+
+If you want to do actual matrix multiplication, you need to use the special matrix multiplication operator `%*%`
+
+```{r}
+myMatrix %*% t(myMatrix)
+```
+
+## Dataframes
+
+The next format we'll learn is the data frame. This is how you will work with data almost all of the time you are doing statistical analyses. Think again of the spreadsheet where you have rows (observations) and columns (variables). Dataframes are different than matrices because they can hold different types of data. One column can be numeric, another character, and another boolean.
+
+Important to note here that there is a 'tidy' version of dataframes called tibbles, which has built-in differences for viewing and stricter subsetting functionality. You will learn more about that in future lessons.
+
+To work with a sample dataframe let's install the package `palmerpenguins` so that we can work with their toy dataset.
+
+```{r, message = F, warning = F}
+#install.packages('palmerpenguins') if you need to
+library(palmerpenguins) #load the package and datasets
+```
+
+If you ever want to know what datasets a package loads, you can use the following:
+
+```{r, eval = F}
+data(package = "palmerpenguins")
+```
+
+In this case, we get two dataframes: `penguins` and `penguins_raw`.
+
+There are some helper functions in R to help you look at a dataframe. The first, which will be helpful at first but I encourage you to not use frequently is `View()`
+
+```{r, eval = F}
+View(penguins)
+```
+
+Use these instead:
+
+```{r, collapse = T, eval =F}
+head(penguins) #looks at the first 6 rows
+tail(penguins) #looks at last 6 rows
+str(penguins) #shows what each variable is
+summary(penguins) #summarises each variable
+```
+
+How do you create your own dataframe?
+
+```{r}
+myDataFrame <- data.frame(x = rnorm(10),
+                          y = rnorm(10))
+myDataFrame
+```
+
+A few things are happening here. I am creating a dataframe with 2 columns, x and y. Each consists of 10 random values from a standard normal distribution, that is what the `rnorm()` function does. Therefore it has 10 rows. You can look at the size of the dataframe with the `dim()` function or count the rows and columsn with the `nrow()` and `ncol()` functions. Note that your dataframe will look different than mine becuase you will be drawing different random numbers. This is okay! For consistency, you can use `set.seed()`
+
+```{r, collapse = T}
+dim(myDataFrame)
+ncol(myDataFrame)
+nrow(myDataFrame)
+```
+
+You select elements the same way as with matrices, but there are some additional operators for dataframes:
+
+```{r}
+myDataFrame[1,2] #first row, second column
+```
+
+Let's say you want to just look at the objects in column 1. There are four basic ways to do this (and probably more!)
+
+```{r, eval = F}
+myDataFrame[,1] # first column
+myDataFrame[,'x'] # column named x
+myDataFrame$x # column named x (most common)
+myDataFrame[['x']] # column named x
+```
+
+
+## Lists
+
+Last, but not least, lists are like file drawers cabinets where each object in the list (a drawer) can hold whatever it wants. Here's an example:
+
+```{r}
+myList <- vector('list',3) #this is a 3 object list, or a three drawer filed cabinet
+myList
+```
+
+Let's add some stuff to the drawers:
+
+```{r}
+myList[[1]] <- myDataFrame
+myList[[2]] <- c('these','are','a','few', 'of', 'my', 'favorite', 'things')
+myList[[3]] <- myMatrix
+```
+
+The first drawer now has our dataframe, the second a character vector, and the third a matrix. When you start working a lot with packages, you will see that packages often return objects to you in lists.
+
+Notice that you subset lists using the double brackets!
+
+If you want to access a particular observation of a particular item in your list, you can do so. For example, let's select the 2nd observation of the second element in the list:
+
+```{r}
+myList[[3]][2,3]
+```
+
+# Test your knowledge
+
+Follow <a href="https://deholliday.shinyapps.io/bootcamp_1/#section-assignment-math-and-variables" target="_blank">THIS LINK</a> to an interactive application to test the skills you learned in this lesson.
+
+### Acknowledgements
+
+This material (and much of the subsequent material) borrows from the work done by many before me. I'm especially grateful to Tyler Reny (Claremont Graduate University) and Justin Esarey (Wake Forest) for R resources and lessons.
