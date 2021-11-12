@@ -1850,7 +1850,7 @@ document.addEventListener('DOMContentLoaded', function() {
 <p>Each tutorial will focus on one facet of R programming and can consist of a number of resources. Some will be done in video format, others more as long-form written tutorials, and some with more interactive components (or a combination of the 3). They are designed so that you can complete them in one or two sittings (think of them as a class session). Tutorials may be created by more than one Maven/TA, so you have the opportunity to see different approaches and styles. You are encouraged to reach out to us if you ever get stuck, we’re here to help!</p>
 <p>If you haven’t already, you should install <a href="https://www.r-project.org/" target="_blank">R</a> and <a href="https://www.rstudio.com/products/rstudio/download/#download" target="_blank">RStudio</a>.</p>
 <h1 id="video-summary">Video Summary</h1>
-<iframe width="560" height="315" src="https://www.youtube.com/watch?v=CNQ7KP7Kdr0" frameborder="0" allowfullscreen>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/CNQ7KP7Kdr0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
 </iframe>
 <h1 id="what-is-r">What is R?</h1>
 <p>R is a programming language designed for statistical computing. One of its main draws is that R is free and open source, meaning it is openly available for modification and distribution. The result is an incredibly vibrant user base active in creating new and exciting ways to use the language. It also means online help is easy to come by! R is becoming more and more popular in academia and industry for data analysis… pretty much anything you can do in Python can be done in R and vice-versa.</p>
@@ -2458,17 +2458,17 @@ row5  481  339  372  405  165</code></pre>
 <span class='va'>myDataFrame</span>
 </code></pre>
 </div>
-<pre><code>            x          y
-1   0.3110403  0.7017864
-2   0.9051817 -0.6660695
-3  -0.9303977  1.1097106
-4  -0.2873422 -1.3744170
-5   0.1682277 -0.1965905
-6  -1.6217047  1.4720827
-7  -1.4501441 -0.6954099
-8   0.3602867 -1.5024779
-9   0.5221305  1.2238495
-10 -0.9956877  0.6526683</code></pre>
+<pre><code>             x          y
+1  -0.50564999 -0.3220320
+2   0.97705368 -0.9390036
+3   0.27278828 -0.1731305
+4  -0.00249938 -0.7036241
+5   0.22193895 -0.6040304
+6  -1.43724420 -0.6499990
+7  -0.50730579 -1.8321956
+8   0.31718640 -0.9254541
+9  -0.50573032  0.1115737
+10  0.93087761 -0.2511130</code></pre>
 </div>
 <p>A few things are happening here. I am creating a dataframe with 2 columns, x and y. Each consists of 10 random values from a standard normal distribution, that is what the <code>rnorm()</code> function does. Therefore it has 10 rows. You can look at the size of the dataframe with the <code>dim()</code> function or count the rows and columsn with the <code>nrow()</code> and <code>ncol()</code> functions. Note that your dataframe will look different than mine becuase you will be drawing different random numbers. This is okay! For consistency, you can use <code>set.seed()</code></p>
 <div class="layout-chunk" data-layout="l-body">
@@ -2494,7 +2494,7 @@ row5  481  339  372  405  165</code></pre>
 <pre class="sourceCode r"><code class="sourceCode r"><span class='va'>myDataFrame</span><span class='op'>[</span><span class='fl'>1</span>,<span class='fl'>2</span><span class='op'>]</span> <span class='co'>#first row, second column</span>
 </code></pre>
 </div>
-<pre><code>[1] 0.7017864</code></pre>
+<pre><code>[1] -0.322032</code></pre>
 </div>
 <p>Let’s say you want to just look at the objects in column 1. There are four basic ways to do this (and probably more!)</p>
 <div class="layout-chunk" data-layout="l-body">
