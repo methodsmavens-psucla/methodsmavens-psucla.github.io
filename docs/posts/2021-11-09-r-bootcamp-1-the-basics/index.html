@@ -2458,17 +2458,17 @@ row5  481  339  372  405  165</code></pre>
 <span class='va'>myDataFrame</span>
 </code></pre>
 </div>
-<pre><code>            x          y
-1   0.2354903  2.0336686
-2  -1.4904838 -1.1920353
-3   0.6248154  1.6115905
-4   0.5229260  0.5715655
-5  -0.4287546  2.7795006
-6  -0.8648364 -0.1467845
-7  -0.2602724 -0.8452769
-8  -0.3204525 -0.8213184
-9   0.3472319 -0.4166162
-10 -0.1078901  1.0603229</code></pre>
+<pre><code>             x          y
+1  -3.09576846  0.2325066
+2  -0.57677204 -0.7934216
+3  -1.51345640 -0.1255321
+4  -0.70872417  1.5137182
+5   0.95544295  0.7976722
+6  -1.65781314  0.5270794
+7  -0.74099934  0.7251943
+8   1.74954024 -0.5501166
+9   1.08332824 -1.0910044
+10 -0.04473391 -0.5737872</code></pre>
 </div>
 <p>A few things are happening here. I am creating a dataframe with 2 columns, x and y. Each consists of 10 random values from a standard normal distribution, that is what the <code>rnorm()</code> function does. Therefore it has 10 rows. You can look at the size of the dataframe with the <code>dim()</code> function or count the rows and columsn with the <code>nrow()</code> and <code>ncol()</code> functions. Note that your dataframe will look different than mine becuase you will be drawing different random numbers. This is okay! For consistency, you can use <code>set.seed()</code></p>
 <div class="layout-chunk" data-layout="l-body">
@@ -2494,7 +2494,7 @@ row5  481  339  372  405  165</code></pre>
 <pre class="sourceCode r"><code class="sourceCode r"><span class='va'>myDataFrame</span><span class='op'>[</span><span class='fl'>1</span>,<span class='fl'>2</span><span class='op'>]</span> <span class='co'>#first row, second column</span>
 </code></pre>
 </div>
-<pre><code>[1] 2.033669</code></pre>
+<pre><code>[1] 0.2325066</code></pre>
 </div>
 <p>Let’s say you want to just look at the objects in column 1. There are four basic ways to do this (and probably more!)</p>
 <div class="layout-chunk" data-layout="l-body">
