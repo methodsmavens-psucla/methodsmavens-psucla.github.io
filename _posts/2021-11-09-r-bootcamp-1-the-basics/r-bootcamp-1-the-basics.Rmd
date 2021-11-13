@@ -8,6 +8,7 @@ author:
   - name: Derek Holliday
     url: {}
 date: 2021-11-09
+preview: bootcamp_1.png
 output:
   distill::distill_article:
     self_contained: false
