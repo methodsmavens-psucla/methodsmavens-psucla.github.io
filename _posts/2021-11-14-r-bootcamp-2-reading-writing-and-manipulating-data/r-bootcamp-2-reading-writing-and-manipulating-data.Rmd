@@ -1,0 +1,341 @@
+---
+title: "R Bootcamp #2: Reading, Writing, and Manipulating Data"
+categories:
+  - bootcamp
+description: |
+  Using base R to perform common operations on external data
+author:
+  - name: Derek Holliday
+    url: {}
+date: 2021-11-14
+output:
+  distill::distill_article:
+    self_contained: false
+    toc: true
+---
+
+Welcome back! In this post, I'll cover some common operations done while manipulating data in R using base R functions.
+
+# Video Summary
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/piuZmYYavXw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+# Getting Data into R
+
+In the last tutorial, we discussed one way pre-made data can be loaded into R: through packages. For non-toy examples, though, you will typically need to "read" data from an external file or site into your R environment in order to manipulate it. There are many ways to do this, and we'll cover a few below.
+
+## Reading local files
+
+Typically, you will want to read files into R that already exist on your local computer. To do this, you need to know two things: where the file is located and what type of file it is.
+
+### Working directories
+
+Regarding file location, you will greatly benefit from keeping a consistent file organization system. One of the most worthwhile investments in grad school will be cloud storage. You should be able to completely destroy your computer and be back up and running with your files overnight. Typically, I keep one Dropbox folder per project with subfolders for data, code, writing, etc.
+
+By default, R looks for and saves file in the **working directory** of the current R session. To see the current working directory for your session, enter the function `getwd()`. If you want to change your working directory, you can do so manually by entering the folder path in `setwd()`. For example, say I have a file I want to read in from the "r_maven" folder in my Dropbox. Given my own file pathing, my command may look like:
+
+```{r, eval = F}
+setwd("C:/Users/username/Dropbox/r_maven") # Windows
+setwd("/Users/username/Dropbox/r_maven") # Mac
+```
+
+You can also set your working directory through RStudio using Session > Set Working Directory > Choose Directory. Selecting "Source file location" will set the working directory to where the current script is saved. You can also set the default working directory from Tools > Global Options. After that, you can use a period to reference your default directory in the file path. For example, if my default directory is set to "C:/Users/username", I could access the same folder as above using:
+
+```{r, eval = F}
+setwd("./Dropbox/r_maven")
+```
+
+These are the "classic" ways of setting the working directory, but modern alternatives exist. For example, you'll notice I'm using what's called an **R Project**, which automatically sets the working directory to the project folder. This is particularly useful when collaborating or using Github. You can learn more about R Projects <a href="https://support.rstudio.com/hc/en-us/articles/200526207-Using-Projects" target="_blank">here</a>, but for now we'll consider it a more advanced topic.
+
+### File types
+
+Now that we've set our working directory, we need to actually read in the data. There are many types of files you might work with, but the most common is a ".csv" file, which stands for "comma separated values." R has a built-in function `read.csv()` for reading files like this. Assuming your file is located in your working directory, the following will read in the data and assign it to the object `dat`:
+
+```{r, eval = F}
+dat = read.csv("filename.csv")
+```
+
+If you check `?read.csv`, you'll notice the function returns a dataframe, so we can treat `dat` appropriately. Alternatively, many now prefer the `read_csv()` function from the `readr` package, which is documented to be significantly faster than base R's `read.csv()`.
+
+What if your data is saved as something other than a .csv file, though? You can find a solution for pretty much any file type. For Stata/SAS/SPSS files, I suggest functions from `haven`, such as `read_dta()`, `read_sas()`, and `read_spss()`. If you need data from a non-csv Excel file, the `readxl` and `xlsx` packages will be useful. For those with massive data files, `fread()` from `data.table` will be your best friend.
+
+## Reading non-local files
+
+Sometimes we want to read files we haven't downloaded locally, which is especially useful if we need to save space on our local drive. One way to read non-local files is simply using the appropriate read function with the link to the appropriate file.
+
+For example, the New York Times datasets of COVID-19 cases and deaths. Looking at their documentation, I figure out the link for their nationally-aggregated results. I can read that file in below:
+
+```{r}
+nyt_cov = read.csv("https://raw.githubusercontent.com/nytimes/covid-19-data/master/us.csv")
+head(nyt_cov) # Print first 6 rows
+```
+
+Another common way of getting data is querying an API. This is a fairly advanced topic, but I want you to know it's an option. For example, King County, WA has a really well organized repository of precinct-level election results. I can get those results into an R-friendly format with the following:
+
+```{r}
+# The following two packages are necessary for API querying
+library(httr)
+library(jsonlite)
+
+res = GET("https://data.kingcounty.gov/resource/2824-fjrn.json") # Save result of query to res
+king_wa = fromJSON(rawToChar(res$content)) # clean content and convert to dataframe
+
+head(king_wa)
+```
+
+Again, there's more going on here than we're going to cover, such as the `rawToChar()` function and the fact that this API has a default limit of 1000 results returned per query, but you should know it exists as an option. Note we don't need to set a working directory for external files.
+
+# Manipulating Data
+
+For the next section, we'll be using data from the 2016 ANES pilot, provided by Tyler Reny. Let's read that into our environment now:
+
+```{r}
+df = foreign::read.dta("http://tylerreny.github.io/data/anes_pilot_2016.dta",
+                       convert.factors = F)
+```
+
+Notice my use of `foreign::` before the function we want to call. In some instances, you may want to use a function from a package without loading the entire package. The package-double colon-function syntax allows you to do that.
+
+## Getting to know your data
+
+Downloading data sight unseen tends to mean we don't know much about what's inside. R has a few functions to help do so that you've already seen, such as:
+
+```{r}
+dim(df)
+```
+
+Yikes, that's 1200 observations of 598 variables. Because of that, I'm not going to show the output of the functions below, since I'd be printing 598 lines (but see the video). Instead, know that `names()` returns a character vector of all the variable names in the dataframe. `glimpse()` from the `dplyr` package gives slightly more detail, giving you the variable names, the types of the variables, and the first few values.
+
+```{r, eval = F}
+names(df)
+dplyr::glimpse(df)
+```
+
+## Exploring the data
+
+Most data, especially survey data, will come with a codebook to help guide your through how to interpret values associated with each variable. The code book for this particular dataset can be found <a href="https://www.electionstudies.org/wp-content/uploads/2016/02/anes_pilot_2016_CodebookUserGuide.pdf" target="_blank">here</a>. For this exercise, we'll focus on cleaning the demographic variables, which we can find in this chunk:
+
+```{r}
+names(df)[218:238]
+```
+
+If we want to dive into one particular variable, we can do so using `head()` and the variable selection syntax dataframe-dollar sign-variable:
+
+```{r}
+head(df$birthyr)
+```
+
+Looks numeric, but we can confirm with `class()`
+
+```{r}
+class(df$birthyr)
+```
+
+We can also use the table function to see how many times each year is in the data:
+
+```{r, collapse=T}
+table(df$birthyr)
+sort(table(df$birthyr)) #Sort by number
+```
+
+You can also look at a histogram to see how the years are distributed.
+
+```{r}
+hist(df$birthyr)
+```
+
+This is great, but say I want to create an age variable instead. To do that, we need to create a new variable, subtracting birth year from 2016 (since that's when the survey was conducted):
+
+```{r}
+df$age = 2016 - df$birthyr
+```
+
+You can check the new variable was created by looking at the name of the last variable in the dataset, where R puts new variables by default:
+
+```{r}
+names(df)[ncol(df)]
+```
+
+And we can look at a few properties of our newly created variable using a few functions you know and a few that are new:
+
+```{r, results='hold'}
+hist(df$age)
+table(df$age)
+range(df$age) # Min and Max values
+mean(df$age) # Average/Mean
+median(df$age) # Median
+```
+
+One of the nice things about this age variable is that there is no missing data (otherwise our mean/median functions would have returned an error). If you ever want to check for the prevalence of NA values, you can use `is.na()` (which returns a boolean vector the same length as the vector given to the function) in conjunction with a few other functions. Let's do that using the `ftobama` variable, a feeling thermometer for President Obama, which I know has some NAs:
+
+```{r, collapse = T}
+any(is.na(df$ftobama)) # Are there ANY NA values in this vector?
+table(is.na(df$ftobama)) # How many?
+which(is.na(df$ftobama)) # Where are there?
+```
+
+So we know there are NA values in observations 62 and 742. We can check that using vector subsetting:
+
+```{r}
+df$ftobama[61:63]
+```
+### Recoding
+
+Sometimes survey data needs to be recoded to reflect the values we are interested. Let's look at the distribution of the family income variable:
+
+```{r}
+table(df$faminc)
+```
+
+So there seems to be a bunch of values 1-16, but then 31? What about 97 and 98? Typically numbers like these reflect missing values in the data, but check the codebook to make sure. This is indeed the case for these values, so we want to recode them to reflect that. Look what would happen if we just took these values to be normal numeric values:
+
+```{r, collapse = T}
+mean(df$faminc)
+hist(df$faminc)
+```
+
+R is assuming these are just part of the continuous spectrum of values for faminc, which we know shouldn't be the case, and it skews our summary statistics. Let's create a new variable and recode it properly, overwriting the troublesome numbers with NA:
+
+```{r, collapse = T}
+df$income_family = df$faminc # Create new variable
+
+# Overwrite values
+df$income_family[df$income_family == 31] = NA
+df$income_family[df$income_family == 97] = NA
+df$income_family[df$income_family == 98] = NA
+
+# Check distribution
+hist(df$income_family)
+
+# Check mean (notice na.rm = T)
+mean(df$income_family, na.rm=T)
+```
+
+That's better! What exactly is the code above doing when we overwrite the values? Remember our vector subsetting and assignment operators... we take the vector `df$income_family`, subset to the cases where the value is equal to a certain number, then assign NA to those cases.
+
+Alternatively, we can do this all in one step using the `%in%` operator:
+
+```{r}
+df$income_family[df$income_family %in% c(31, 97, 98)] = NA
+```
+
+You can also write a function if you are going to use it a lot. This is way more complex than you need to know right now, but it's an introduction to what functions do.
+
+```{r}
+recode_missing = function(var_name, missing_vals){ # arguments the function takes
+  var_name[var_name %in% missing_vals] = NA # recode missing values
+  return(var_name) # return the new variable
+}
+df$income_family = recode_missing(df$income_family, c(31, 97, 98)) 
+```
+
+### `ifelse()`
+
+Now we want to recode race, which is currently a single variable with discrete values for different racial groups, into a series of dummy variables (0/1) for each racial group. This can be achieved using `ifelse()`, which takes three arguments: test, yes, and no (in that order). Test is a logical test, yes is the value returned if the test is TRUE, and no is the value returned if the test is FALSE.
+
+```{r}
+df$white <- ifelse(df$race == 1, 1, 0)
+table(df$white) #always check your recoding afterwards against codebook
+
+df$black    <- ifelse(df$race == 2, 1, 0)
+df$hispanic <- ifelse(df$race == 3, 1, 0)
+df$asian    <- ifelse(df$race == 4, 1, 0)
+```
+
+You can chain multiple logic tests into your `ifelse()` statements. For example, if I wanted to create a dummy variable for white men, I could do the following:
+
+```{r, eval = F}
+df$white_man = ifelse(df$race == 1 & df$gender == 2, 1, 0)
+```
+
+Note that for observations with NA values, `ifelse()` willl return NA instead of 1 or 0. Usually that's fine.
+
+
+### Reverse Coding
+
+Partisanship is usually measured using a 7 point scale, which is the case for the `pid7` variable. Let's first check on NAs:
+
+```{r}
+table(is.na(df$pid7))
+```
+
+Looks like we'll have to get rid of those. One thing I have trouble with in the pid7 scale is whether 7 is strong Republican or strong Democrat. I'll recode the data and come back to it months later and forget. So, I suggest renaming it by the direction of the scale. So if 7 is strong Republican, name the variable `republican_pid7` or just `republican` and vice versa.
+
+```{r}
+df$republican_pid7 = df$pid7
+```
+
+I usually code all my variables in similar directions. If interested in exploring the effects of racial resentment on vote or attitudes towards Obama, for example, we would want the high values on the racial resentment scale to be more racially resentful, pid7 to be recoded with Republican as the high category, and ideology to be recoded so very conservative is the largest value. When you are looking at a regression, you will see that all are positive. Otherwise you have to remember how each is coded. This way is easier.
+
+You will have to reverse code things all the time. Here is an easy way to do it.
+
+```{r}
+df$democrat_pid7 = abs(df$pid7 - 8) #reverse code
+
+#step 1. How many unique values in the scale? Add one
+length(table(df$pid7)) + 1 #this would be a more general form of that
+
+#step 2. Double check that the new scale is, indeed, a mirror image of the old scale
+table(dem7 = df$democrat_pid7, rep7 = df$republican_pid7)
+```
+
+You can also write this trick into a function! But always double check that things were recoded correctly!
+
+```{r}
+reverse_code <- function(x){
+  vals <- length(table(x)) + 1
+  abs(x - vals)
+}
+df$democrat_pid7 <- reverse_code(df$pid7)
+```
+
+### Scales
+
+Finally, we want to create a racial resentment scale. Go back to the codebook and find `rr1` through `rr4`. This is the racial resentment battery. You'll notice that they are all likert scale questions coded from 1 to 5 with different values for missing data. Some are reverse coded so that most resentful is a higher value and some so that least resentful is a higher value. What you have to do is look at each one, check for missing data, see if you need to flip ordering of values or not to be consistent, and then combine them all into a scale by adding them together.
+
+```{r, collapse = T}
+# Special favors
+table(df$rr1)
+df$rr1rc <- recode_missing(df$rr1, 8) #recode missing
+df$rr1rc <- reverse_code(df$rr1rc) #reverse code
+table(df$rr1rc)
+
+# Work way out
+table(df$rr2)
+df$rr2rc <- recode_missing(df$rr2, 8) #recode missing
+table(df$rr2rc)
+
+# Less than deserve
+table(df$rr3)
+df$rr3rc <- recode_missing(df$rr3, 8) #recode missing
+table(df$rr3rc)
+
+# Try harder
+table(df$rr4)
+df$rr4rc <- recode_missing(df$rr4, 8) #recode missing
+df$rr4rc <- reverse_code(df$rr4rc) #reverse code
+table(df$rr4rc)
+
+#check correlation to ensure they are coded properly
+#if you have negative numbers, you miscoded one
+cor(cbind(df$rr1rc,df$rr2rc,df$rr3rc,df$rr4rc), use='complete.obs')
+
+#combine into scale (ask yourself why this math works)
+df$rr_scale <- ((df$rr1rc + df$rr2rc + df$rr3rc + df$rr4rc) - 4)/16
+hist(df$rr_scale)
+range(df$rr_scale, na.rm=T)
+```
+
+# Writing Data
+
+So far we've created new variables for age, income, and race. There is so much more we could do here... recode gender to be a 0/1 indicator for female, reverse code ideology, etc. We've done quite a bit, though, so we should save our changes by writing this file to a new csv that we can load later.
+
+The process of writing to csv is very similar to that of reading in data. By default, the file will be written to your working directoy. If you want to write it elsewhere, just specify it in the path argument:
+
+```{r, eval = F}
+write.csv(df, file = "C:/Users/myname/Dropbox/r_maven/cleaned_anes.csv")
+```
+
+# Test your knowledge
+
+Follow <a href="https://deholliday.shinyapps.io/bootcamp_2/#section-reading-and-writing-data" target="_blank">THIS LINK</a> for a quick interactive knowledge check.

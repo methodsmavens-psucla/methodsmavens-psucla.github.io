@@ -11,6 +11,7 @@ date: 2021-11-09
 output:
   distill::distill_article:
     self_contained: false
+    toc: true
 ---
 
 Welcome to R bootcamp! Over the next few posts, we will cover basic R functionality necessary for your growth as social scientists.

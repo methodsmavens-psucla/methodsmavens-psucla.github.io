@@ -113,7 +113,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   <!--radix_placeholder_rmarkdown_metadata-->
 
 <script type="text/json" id="radix-rmarkdown-metadata">
-{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","categories","description","author","date","output"]}},"value":[{"type":"character","attributes":{},"value":["R Bootcamp #1: The Basics"]},{"type":"character","attributes":{},"value":["bootcamp"]},{"type":"character","attributes":{},"value":["An introduction to basic R functions, data types, and structures"]},{"type":"list","attributes":{},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["name","url"]}},"value":[{"type":"character","attributes":{},"value":["Derek Holliday"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":[]}},"value":[]}]}]},{"type":"character","attributes":{},"value":["2021-11-09"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["distill::distill_article"]}},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["self_contained"]}},"value":[{"type":"logical","attributes":{},"value":[false]}]}]}]}
+{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","categories","description","author","date","output"]}},"value":[{"type":"character","attributes":{},"value":["R Bootcamp #1: The Basics"]},{"type":"character","attributes":{},"value":["bootcamp"]},{"type":"character","attributes":{},"value":["An introduction to basic R functions, data types, and structures"]},{"type":"list","attributes":{},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["name","url"]}},"value":[{"type":"character","attributes":{},"value":["Derek Holliday"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":[]}},"value":[]}]}]},{"type":"character","attributes":{},"value":["2021-11-09"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["distill::distill_article"]}},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["self_contained","toc"]}},"value":[{"type":"logical","attributes":{},"value":[false]},{"type":"logical","attributes":{},"value":[true]}]}]}]}
 </script>
 <!--/radix_placeholder_rmarkdown_metadata-->
   
@@ -1845,6 +1845,37 @@ document.addEventListener('DOMContentLoaded', function() {
 </div>
 
 <div class="d-article">
+<div class="d-contents d-contents-float">
+<nav class="l-text toc figcaption" id="TOC">
+<h3>Contents</h3>
+<ul>
+<li><a href="#structure-and-setup">Structure and Setup</a></li>
+<li><a href="#video-summary">Video Summary</a></li>
+<li><a href="#what-is-r">What is R?</a></li>
+<li><a href="#basic-r-commands">Basic R Commands</a>
+<ul>
+<li><a href="#assignment">Assignment</a></li>
+<li><a href="#math">Math</a></li>
+<li><a href="#variables">Variables</a></li>
+<li><a href="#vectors">Vectors</a>
+<ul>
+<li><a href="#naming-vectors">Naming vectors</a></li>
+<li><a href="#manipulating-vectors">Manipulating vectors</a></li>
+</ul></li>
+<li><a href="#matrices-2-dimensional-arrays-of-data">Matrices: 2-dimensional arrays of data</a>
+<ul>
+<li><a href="#selecting-objects-from-a-2-dimension-array">Selecting objects from a 2 dimension array</a></li>
+</ul></li>
+<li><a href="#dataframes">Dataframes</a></li>
+<li><a href="#lists">Lists</a></li>
+</ul></li>
+<li><a href="#test-your-knowledge">Test your knowledge</a>
+<ul>
+<li><a href="#acknowledgements">Acknowledgements</a></li>
+</ul></li>
+</ul>
+</nav>
+</div>
 <p>Welcome to R bootcamp! Over the next few posts, we will cover basic R functionality necessary for your growth as social scientists.</p>
 <h1 id="structure-and-setup">Structure and Setup</h1>
 <p>Each tutorial will focus on one facet of R programming and can consist of a number of resources. Some will be done in video format, others more as long-form written tutorials, and some with more interactive components (or a combination of the 3). They are designed so that you can complete them in one or two sittings (think of them as a class session). Tutorials may be created by more than one Maven/TA, so you have the opportunity to see different approaches and styles. You are encouraged to reach out to us if you ever get stuck, we’re here to help!</p>
@@ -2459,16 +2490,16 @@ row5  481  339  372  405  165</code></pre>
 </code></pre>
 </div>
 <pre><code>            x           y
-1  -1.2024673 -0.30972249
-2   1.1907855  0.19720273
-3   0.5437721 -0.43720070
-4   0.3300824 -0.54447674
-5   0.5584974 -0.03387019
-6  -0.2102738  0.34456877
-7  -1.1643274 -0.48826012
-8  -0.8475735 -0.69484249
-9   2.3620707 -0.15330956
-10 -0.1667646 -0.99446251</code></pre>
+1   0.7422935  0.01915408
+2  -0.6393958 -1.07390674
+3  -0.3553513 -0.70612467
+4   0.9717347 -0.66081543
+5   0.3951876  1.54822209
+6   0.3399082 -1.35654867
+7  -0.7663295 -0.24744880
+8   1.4427279 -0.77805014
+9   1.0579099 -0.46334326
+10  0.1759219  0.97311272</code></pre>
 </div>
 <p>A few things are happening here. I am creating a dataframe with 2 columns, x and y. Each consists of 10 random values from a standard normal distribution, that is what the <code>rnorm()</code> function does. Therefore it has 10 rows. You can look at the size of the dataframe with the <code>dim()</code> function or count the rows and columsn with the <code>nrow()</code> and <code>ncol()</code> functions. Note that your dataframe will look different than mine becuase you will be drawing different random numbers. This is okay! For consistency, you can use <code>set.seed()</code></p>
 <div class="layout-chunk" data-layout="l-body">
@@ -2494,7 +2525,7 @@ row5  481  339  372  405  165</code></pre>
 <pre class="sourceCode r"><code class="sourceCode r"><span class='va'>myDataFrame</span><span class='op'>[</span><span class='fl'>1</span>,<span class='fl'>2</span><span class='op'>]</span> <span class='co'>#first row, second column</span>
 </code></pre>
 </div>
-<pre><code>[1] -0.3097225</code></pre>
+<pre><code>[1] 0.01915408</code></pre>
 </div>
 <p>Let’s say you want to just look at the objects in column 1. There are four basic ways to do this (and probably more!)</p>
 <div class="layout-chunk" data-layout="l-body">
