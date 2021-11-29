@@ -1,11 +1,13 @@
 ---
 title: "R Bootcamp #3 - Summarizing Data with the Tidyverse"
+categories:
+  - bootcamp
 description: |
   An introduction to data manipulation with tidyverse functions
 author:
   - name: Derek Holliday
     url: {}
-date: 2021-11-17
+date: 2021-11-18
 output:
   distill::distill_article:
     self_contained: false
