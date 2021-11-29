@@ -11,6 +11,7 @@ date: 2021-11-18
 output:
   distill::distill_article:
     self_contained: false
+    toc: true
 ---
 
 Welcome to the first day of the rest of your (coding) life. In the first two sessions, we covered base R functionality, but today we turn to a more "opinionated" R coding philosophy: the `tidyverse`. If you haven't already, you should install the `tidyverse` using the command below:
