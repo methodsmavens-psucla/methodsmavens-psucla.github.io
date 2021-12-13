@@ -14,7 +14,6 @@ output:
     toc: true
 ---
 
-
 # Functions in R
 
 Hello again! Today we're going to dive into the idea of functions in coding. Functions are a fundamental building block in coding generally, and you've already encountered and used many of them written by others (e.g. `dpylr::select()`, `base::mean()`etc). Today we'll discuss why they are so useful, how they work, and how to write and use your very own functions!
