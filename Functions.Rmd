@@ -19,6 +19,11 @@ output:
 
 Hello again! Today we're going to dive into the idea of functions in coding. Functions are a fundamental building block in coding generally, and you've already encountered and used many of them written by others (e.g. `dpylr::select()`, `base::mean()`etc). Today we'll discuss why they are so useful, how they work, and how to write and use your very own functions!
 
+## Video Walk through
+
+<iframe width="560" height="315" src="https://youtu.be/gIxlBpcrB8M" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+
 ## Conceptually, what are functions? What are they good for anyway?
 
 Generally, a function does all the regular coding you're used to but is built using abstract, general data structures rather than with concrete (locally-loaded/stored) data. What does this mean? In brief, a function is a shell of code that is written in general terms and by itself does do anything or manipulate any data until we later "run it." When we write a function, we are actually telling the computer to store the code that we write in memory for later use. For example:
@@ -214,7 +219,6 @@ library(dplyr)
 ```
 
 "The following objects are masked from package:..." indicates that you just loaded a package that has a function with the same namespace! R somewhat infamously has a lot of older packages that supply functions of the same name, but that do totally different things.  For example when we load `dplyr`, we are told "filter" and "lag" are masked from "package:stats."  In other words,`dpylr` has a function, `dplyr::filter`, that is writing over the function `stats::filter`. Sometimes, you may also encounter error messages where `R` is clearly confused about which function it should be using because they both have the same name. To clarify which namespace you are referring to you can use the following syntax: `packagename::functionname()`. This may happen annoyingly frequently for `dplyr::select` unfortunately.
-
 
 
 ## Functions and "Scope"
