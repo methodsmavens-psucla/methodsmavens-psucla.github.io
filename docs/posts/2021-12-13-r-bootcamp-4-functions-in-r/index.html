@@ -1,0 +1,2439 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1"/>
+  <meta name="generator" content="distill" />
+
+  <style type="text/css">
+  /* Hide doc at startup (prevent jankiness while JS renders/transforms) */
+  body {
+    visibility: hidden;
+  }
+  </style>
+
+ <!--radix_placeholder_import_source-->
+ <!--/radix_placeholder_import_source-->
+
+<style type="text/css">code{white-space: pre;}</style>
+<style type="text/css" data-origin="pandoc">
+a.sourceLine { display: inline-block; line-height: 1.25; }
+a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
+a.sourceLine:empty { height: 1.2em; position: absolute; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+code.sourceCode { white-space: pre-wrap; }
+a.sourceLine { text-indent: -1em; padding-left: 1em; }
+}
+pre.numberSource a.sourceLine
+  { position: relative; }
+pre.numberSource a.sourceLine:empty
+  { position: absolute; }
+pre.numberSource a.sourceLine::before
+  { content: attr(data-line-number);
+    position: absolute; left: -5em; text-align: right; vertical-align: baseline;
+    border: none; pointer-events: all;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {  }
+@media screen {
+a.sourceLine::before { text-decoration: underline; }
+}
+code span.al { color: #ad0000; } /* Alert */
+code span.an { color: #5e5e5e; } /* Annotation */
+code span.at { } /* Attribute */
+code span.bn { color: #ad0000; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007ba5; } /* ControlFlow */
+code span.ch { color: #20794d; } /* Char */
+code span.cn { color: #8f5902; } /* Constant */
+code span.co { color: #5e5e5e; } /* Comment */
+code span.cv { color: #5e5e5e; font-style: italic; } /* CommentVar */
+code span.do { color: #5e5e5e; font-style: italic; } /* Documentation */
+code span.dt { color: #ad0000; } /* DataType */
+code span.dv { color: #ad0000; } /* DecVal */
+code span.er { color: #ad0000; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #ad0000; } /* Float */
+code span.fu { color: #4758ab; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #5e5e5e; } /* Information */
+code span.kw { color: #007ba5; } /* Keyword */
+code span.op { color: #5e5e5e; } /* Operator */
+code span.ot { color: #007ba5; } /* Other */
+code span.pp { color: #ad0000; } /* Preprocessor */
+code span.sc { color: #5e5e5e; } /* SpecialChar */
+code span.ss { color: #20794d; } /* SpecialString */
+code span.st { color: #20794d; } /* String */
+code span.va { color: #111111; } /* Variable */
+code span.vs { color: #20794d; } /* VerbatimString */
+code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
+</style>
+
+
+  <!--radix_placeholder_meta_tags-->
+<title>UCLA PoliSci Methods Mavens Resources: R Bootcamp #4: Functions in R</title>
+
+<meta property="description" itemprop="description" content="An introduction to basic R functions, data types, and structures"/>
+
+
+<!--  https://schema.org/Article -->
+<meta property="article:published" itemprop="datePublished" content="2021-11-29"/>
+<meta property="article:created" itemprop="dateCreated" content="2021-11-29"/>
+<meta name="article:author" content="Ciara Sterbenz"/>
+
+<!--  https://developers.facebook.com/docs/sharing/webmasters#markup -->
+<meta property="og:title" content="UCLA PoliSci Methods Mavens Resources: R Bootcamp #4: Functions in R"/>
+<meta property="og:type" content="article"/>
+<meta property="og:description" content="An introduction to basic R functions, data types, and structures"/>
+<meta property="og:locale" content="en_US"/>
+<meta property="og:site_name" content="UCLA PoliSci Methods Mavens Resources"/>
+
+<!--  https://dev.twitter.com/cards/types/summary -->
+<meta property="twitter:card" content="summary"/>
+<meta property="twitter:title" content="UCLA PoliSci Methods Mavens Resources: R Bootcamp #4: Functions in R"/>
+<meta property="twitter:description" content="An introduction to basic R functions, data types, and structures"/>
+
+<!--/radix_placeholder_meta_tags-->
+  <!--radix_placeholder_rmarkdown_metadata-->
+
+<script type="text/json" id="radix-rmarkdown-metadata">
+{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","categories","description","author","date","output"]}},"value":[{"type":"character","attributes":{},"value":["R Bootcamp #4: Functions in R"]},{"type":"character","attributes":{},"value":["bootcamp"]},{"type":"character","attributes":{},"value":["An introduction to basic R functions, data types, and structures"]},{"type":"list","attributes":{},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["name","url"]}},"value":[{"type":"character","attributes":{},"value":["Ciara Sterbenz"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":[]}},"value":[]}]}]},{"type":"character","attributes":{},"value":["2021-11-29"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["distill::distill_article"]}},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["self_contained","toc"]}},"value":[{"type":"logical","attributes":{},"value":[false]},{"type":"logical","attributes":{},"value":[true]}]}]}]}
+</script>
+<!--/radix_placeholder_rmarkdown_metadata-->
+  
+  <script type="text/json" id="radix-resource-manifest">
+  {"type":"NULL"}
+  </script>
+  <!--radix_placeholder_navigation_in_header-->
+<meta name="distill:offset" content="../.."/>
+
+<script type="application/javascript">
+
+  window.headroom_prevent_pin = false;
+
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+
+    // initialize headroom for banner
+    var header = $('header').get(0);
+    var headerHeight = header.offsetHeight;
+    var headroom = new Headroom(header, {
+      tolerance: 5,
+      onPin : function() {
+        if (window.headroom_prevent_pin) {
+          window.headroom_prevent_pin = false;
+          headroom.unpin();
+        }
+      }
+    });
+    headroom.init();
+    if(window.location.hash)
+      headroom.unpin();
+    $(header).addClass('headroom--transition');
+
+    // offset scroll location for banner on hash change
+    // (see: https://github.com/WickyNilliams/headroom.js/issues/38)
+    window.addEventListener("hashchange", function(event) {
+      window.scrollTo(0, window.pageYOffset - (headerHeight + 25));
+    });
+
+    // responsive menu
+    $('.distill-site-header').each(function(i, val) {
+      var topnav = $(this);
+      var toggle = topnav.find('.nav-toggle');
+      toggle.on('click', function() {
+        topnav.toggleClass('responsive');
+      });
+    });
+
+    // nav dropdowns
+    $('.nav-dropbtn').click(function(e) {
+      $(this).next('.nav-dropdown-content').toggleClass('nav-dropdown-active');
+      $(this).parent().siblings('.nav-dropdown')
+         .children('.nav-dropdown-content').removeClass('nav-dropdown-active');
+    });
+    $("body").click(function(e){
+      $('.nav-dropdown-content').removeClass('nav-dropdown-active');
+    });
+    $(".nav-dropdown").click(function(e){
+      e.stopPropagation();
+    });
+  });
+</script>
+
+<style type="text/css">
+
+/* Theme (user-documented overrideables for nav appearance) */
+
+.distill-site-nav {
+  color: rgba(255, 255, 255, 0.8);
+  background-color: #0F2E3D;
+  font-size: 15px;
+  font-weight: 300;
+}
+
+.distill-site-nav a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.distill-site-nav a:hover {
+  color: white;
+}
+
+@media print {
+  .distill-site-nav {
+    display: none;
+  }
+}
+
+.distill-site-header {
+
+}
+
+.distill-site-footer {
+
+}
+
+
+/* Site Header */
+
+.distill-site-header {
+  width: 100%;
+  box-sizing: border-box;
+  z-index: 3;
+}
+
+.distill-site-header .nav-left {
+  display: inline-block;
+  margin-left: 8px;
+}
+
+@media screen and (max-width: 768px) {
+  .distill-site-header .nav-left {
+    margin-left: 0;
+  }
+}
+
+
+.distill-site-header .nav-right {
+  float: right;
+  margin-right: 8px;
+}
+
+.distill-site-header a,
+.distill-site-header .title {
+  display: inline-block;
+  text-align: center;
+  padding: 14px 10px 14px 10px;
+}
+
+.distill-site-header .title {
+  font-size: 18px;
+  min-width: 150px;
+}
+
+.distill-site-header .logo {
+  padding: 0;
+}
+
+.distill-site-header .logo img {
+  display: none;
+  max-height: 20px;
+  width: auto;
+  margin-bottom: -4px;
+}
+
+.distill-site-header .nav-image img {
+  max-height: 18px;
+  width: auto;
+  display: inline-block;
+  margin-bottom: -3px;
+}
+
+
+
+@media screen and (min-width: 1000px) {
+  .distill-site-header .logo img {
+    display: inline-block;
+  }
+  .distill-site-header .nav-left {
+    margin-left: 20px;
+  }
+  .distill-site-header .nav-right {
+    margin-right: 20px;
+  }
+  .distill-site-header .title {
+    padding-left: 12px;
+  }
+}
+
+
+.distill-site-header .nav-toggle {
+  display: none;
+}
+
+.nav-dropdown {
+  display: inline-block;
+  position: relative;
+}
+
+.nav-dropdown .nav-dropbtn {
+  border: none;
+  outline: none;
+  color: rgba(255, 255, 255, 0.8);
+  padding: 16px 10px;
+  background-color: transparent;
+  font-family: inherit;
+  font-size: inherit;
+  font-weight: inherit;
+  margin: 0;
+  margin-top: 1px;
+  z-index: 2;
+}
+
+.nav-dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: white;
+  min-width: 200px;
+  border: 1px solid rgba(0,0,0,0.15);
+  border-radius: 4px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.1);
+  z-index: 1;
+  margin-top: 2px;
+  white-space: nowrap;
+  padding-top: 4px;
+  padding-bottom: 4px;
+}
+
+.nav-dropdown-content hr {
+  margin-top: 4px;
+  margin-bottom: 4px;
+  border: none;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.nav-dropdown-active {
+  display: block;
+}
+
+.nav-dropdown-content a, .nav-dropdown-content .nav-dropdown-header {
+  color: black;
+  padding: 6px 24px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+
+.nav-dropdown-content .nav-dropdown-header {
+  display: block;
+  padding: 5px 24px;
+  padding-bottom: 0;
+  text-transform: uppercase;
+  font-size: 14px;
+  color: #999999;
+  white-space: nowrap;
+}
+
+.nav-dropdown:hover .nav-dropbtn {
+  color: white;
+}
+
+.nav-dropdown-content a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+.nav-right .nav-dropdown-content {
+  margin-left: -45%;
+  right: 0;
+}
+
+@media screen and (max-width: 768px) {
+  .distill-site-header a, .distill-site-header .nav-dropdown  {display: none;}
+  .distill-site-header a.nav-toggle {
+    float: right;
+    display: block;
+  }
+  .distill-site-header .title {
+    margin-left: 0;
+  }
+  .distill-site-header .nav-right {
+    margin-right: 0;
+  }
+  .distill-site-header {
+    overflow: hidden;
+  }
+  .nav-right .nav-dropdown-content {
+    margin-left: 0;
+  }
+}
+
+
+@media screen and (max-width: 768px) {
+  .distill-site-header.responsive {position: relative; min-height: 500px; }
+  .distill-site-header.responsive a.nav-toggle {
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+  .distill-site-header.responsive a,
+  .distill-site-header.responsive .nav-dropdown {
+    display: block;
+    text-align: left;
+  }
+  .distill-site-header.responsive .nav-left,
+  .distill-site-header.responsive .nav-right {
+    width: 100%;
+  }
+  .distill-site-header.responsive .nav-dropdown {float: none;}
+  .distill-site-header.responsive .nav-dropdown-content {position: relative;}
+  .distill-site-header.responsive .nav-dropdown .nav-dropbtn {
+    display: block;
+    width: 100%;
+    text-align: left;
+  }
+}
+
+/* Site Footer */
+
+.distill-site-footer {
+  width: 100%;
+  overflow: hidden;
+  box-sizing: border-box;
+  z-index: 3;
+  margin-top: 30px;
+  padding-top: 30px;
+  padding-bottom: 30px;
+  text-align: center;
+}
+
+/* Headroom */
+
+d-title {
+  padding-top: 6rem;
+}
+
+@media print {
+  d-title {
+    padding-top: 4rem;
+  }
+}
+
+.headroom {
+  z-index: 1000;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+
+.headroom--transition {
+  transition: all .4s ease-in-out;
+}
+
+.headroom--unpinned {
+  top: -100px;
+}
+
+.headroom--pinned {
+  top: 0;
+}
+
+/* adjust viewport for navbar height */
+/* helps vertically center bootstrap (non-distill) content */
+.min-vh-100 {
+  min-height: calc(100vh - 100px) !important;
+}
+
+</style>
+
+<script src="../../site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<link href="../../site_libs/font-awesome-5.1.0/css/all.css" rel="stylesheet"/>
+<link href="../../site_libs/font-awesome-5.1.0/css/v4-shims.css" rel="stylesheet"/>
+<script src="../../site_libs/headroom-0.9.4/headroom.min.js"></script>
+<!--/radix_placeholder_navigation_in_header-->
+  <!--radix_placeholder_distill-->
+
+<style type="text/css">
+
+body {
+  background-color: white;
+}
+
+.pandoc-table {
+  width: 100%;
+}
+
+.pandoc-table>caption {
+  margin-bottom: 10px;
+}
+
+.pandoc-table th:not([align]) {
+  text-align: left;
+}
+
+.pagedtable-footer {
+  font-size: 15px;
+}
+
+d-byline .byline {
+  grid-template-columns: 2fr 2fr;
+}
+
+d-byline .byline h3 {
+  margin-block-start: 1.5em;
+}
+
+d-byline .byline .authors-affiliations h3 {
+  margin-block-start: 0.5em;
+}
+
+.authors-affiliations .orcid-id {
+  width: 16px;
+  height:16px;
+  margin-left: 4px;
+  margin-right: 4px;
+  vertical-align: middle;
+  padding-bottom: 2px;
+}
+
+d-title .dt-tags {
+  margin-top: 1em;
+  grid-column: text;
+}
+
+.dt-tags .dt-tag {
+  text-decoration: none;
+  display: inline-block;
+  color: rgba(0,0,0,0.6);
+  padding: 0em 0.4em;
+  margin-right: 0.5em;
+  margin-bottom: 0.4em;
+  font-size: 70%;
+  border: 1px solid rgba(0,0,0,0.2);
+  border-radius: 3px;
+  text-transform: uppercase;
+  font-weight: 500;
+}
+
+d-article table.gt_table td,
+d-article table.gt_table th {
+  border-bottom: none;
+}
+
+.html-widget {
+  margin-bottom: 2.0em;
+}
+
+.l-screen-inset {
+  padding-right: 16px;
+}
+
+.l-screen .caption {
+  margin-left: 10px;
+}
+
+.shaded {
+  background: rgb(247, 247, 247);
+  padding-top: 20px;
+  padding-bottom: 20px;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.shaded .html-widget {
+  margin-bottom: 0;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.shaded .shaded-content {
+  background: white;
+}
+
+.text-output {
+  margin-top: 0;
+  line-height: 1.5em;
+}
+
+.hidden {
+  display: none !important;
+}
+
+d-article {
+  padding-top: 2.5rem;
+  padding-bottom: 30px;
+}
+
+d-appendix {
+  padding-top: 30px;
+}
+
+d-article>p>img {
+  width: 100%;
+}
+
+d-article h2 {
+  margin: 1rem 0 1.5rem 0;
+}
+
+d-article h3 {
+  margin-top: 1.5rem;
+}
+
+d-article iframe {
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  margin-bottom: 2.0em;
+  width: 100%;
+}
+
+/* Tweak code blocks */
+
+d-article div.sourceCode code,
+d-article pre code {
+  font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+}
+
+d-article pre,
+d-article div.sourceCode,
+d-article div.sourceCode pre {
+  overflow: auto;
+}
+
+d-article div.sourceCode {
+  background-color: white;
+}
+
+d-article div.sourceCode pre {
+  padding-left: 10px;
+  font-size: 12px;
+  border-left: 2px solid rgba(0,0,0,0.1);
+}
+
+d-article pre {
+  font-size: 12px;
+  color: black;
+  background: none;
+  margin-top: 0;
+  text-align: left;
+  white-space: pre;
+  word-spacing: normal;
+  word-break: normal;
+  word-wrap: normal;
+  line-height: 1.5;
+
+  -moz-tab-size: 4;
+  -o-tab-size: 4;
+  tab-size: 4;
+
+  -webkit-hyphens: none;
+  -moz-hyphens: none;
+  -ms-hyphens: none;
+  hyphens: none;
+}
+
+d-article pre a {
+  border-bottom: none;
+}
+
+d-article pre a:hover {
+  border-bottom: none;
+  text-decoration: underline;
+}
+
+d-article details {
+  grid-column: text;
+  margin-bottom: 0.8em;
+}
+
+@media(min-width: 768px) {
+
+d-article pre,
+d-article div.sourceCode,
+d-article div.sourceCode pre {
+  overflow: visible !important;
+}
+
+d-article div.sourceCode pre {
+  padding-left: 18px;
+  font-size: 14px;
+}
+
+d-article pre {
+  font-size: 14px;
+}
+
+}
+
+figure img.external {
+  background: white;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  box-shadow: 0 1px 8px rgba(0, 0, 0, 0.1);
+  padding: 18px;
+  box-sizing: border-box;
+}
+
+/* CSS for d-contents */
+
+.d-contents {
+  grid-column: text;
+  color: rgba(0,0,0,0.8);
+  font-size: 0.9em;
+  padding-bottom: 1em;
+  margin-bottom: 1em;
+  padding-bottom: 0.5em;
+  margin-bottom: 1em;
+  padding-left: 0.25em;
+  justify-self: start;
+}
+
+@media(min-width: 1000px) {
+  .d-contents.d-contents-float {
+    height: 0;
+    grid-column-start: 1;
+    grid-column-end: 4;
+    justify-self: center;
+    padding-right: 3em;
+    padding-left: 2em;
+  }
+}
+
+.d-contents nav h3 {
+  font-size: 18px;
+  margin-top: 0;
+  margin-bottom: 1em;
+}
+
+.d-contents li {
+  list-style-type: none
+}
+
+.d-contents nav > ul {
+  padding-left: 0;
+}
+
+.d-contents ul {
+  padding-left: 1em
+}
+
+.d-contents nav ul li {
+  margin-top: 0.6em;
+  margin-bottom: 0.2em;
+}
+
+.d-contents nav a {
+  font-size: 13px;
+  border-bottom: none;
+  text-decoration: none
+  color: rgba(0, 0, 0, 0.8);
+}
+
+.d-contents nav a:hover {
+  text-decoration: underline solid rgba(0, 0, 0, 0.6)
+}
+
+.d-contents nav > ul > li > a {
+  font-weight: 600;
+}
+
+.d-contents nav > ul > li > ul {
+  font-weight: inherit;
+}
+
+.d-contents nav > ul > li > ul > li {
+  margin-top: 0.2em;
+}
+
+
+.d-contents nav ul {
+  margin-top: 0;
+  margin-bottom: 0.25em;
+}
+
+.d-article-with-toc h2:nth-child(2) {
+  margin-top: 0;
+}
+
+
+/* Figure */
+
+.figure {
+  position: relative;
+  margin-bottom: 2.5em;
+  margin-top: 1.5em;
+}
+
+.figure img {
+  width: 100%;
+}
+
+.figure .caption {
+  color: rgba(0, 0, 0, 0.6);
+  font-size: 12px;
+  line-height: 1.5em;
+}
+
+.figure img.external {
+  background: white;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  box-shadow: 0 1px 8px rgba(0, 0, 0, 0.1);
+  padding: 18px;
+  box-sizing: border-box;
+}
+
+.figure .caption a {
+  color: rgba(0, 0, 0, 0.6);
+}
+
+.figure .caption b,
+.figure .caption strong, {
+  font-weight: 600;
+  color: rgba(0, 0, 0, 1.0);
+}
+
+/* Citations */
+
+d-article .citation {
+  color: inherit;
+  cursor: inherit;
+}
+
+div.hanging-indent{
+  margin-left: 1em; text-indent: -1em;
+}
+
+/* Citation hover box */
+
+.tippy-box[data-theme~=light-border] {
+  background-color: rgba(250, 250, 250, 0.95);
+}
+
+.tippy-content > p {
+  margin-bottom: 0;
+  padding: 2px;
+}
+
+
+/* Tweak 1000px media break to show more text */
+
+@media(min-width: 1000px) {
+  .base-grid,
+  distill-header,
+  d-title,
+  d-abstract,
+  d-article,
+  d-appendix,
+  distill-appendix,
+  d-byline,
+  d-footnote-list,
+  d-citation-list,
+  distill-footer {
+    grid-template-columns: [screen-start] 1fr [page-start kicker-start] 80px [middle-start] 50px [text-start kicker-end] 65px 65px 65px 65px 65px 65px 65px 65px [text-end gutter-start] 65px [middle-end] 65px [page-end gutter-end] 1fr [screen-end];
+    grid-column-gap: 16px;
+  }
+
+  .grid {
+    grid-column-gap: 16px;
+  }
+
+  d-article {
+    font-size: 1.06rem;
+    line-height: 1.7em;
+  }
+  figure .caption, .figure .caption, figure figcaption {
+    font-size: 13px;
+  }
+}
+
+@media(min-width: 1180px) {
+  .base-grid,
+  distill-header,
+  d-title,
+  d-abstract,
+  d-article,
+  d-appendix,
+  distill-appendix,
+  d-byline,
+  d-footnote-list,
+  d-citation-list,
+  distill-footer {
+    grid-template-columns: [screen-start] 1fr [page-start kicker-start] 60px [middle-start] 60px [text-start kicker-end] 60px 60px 60px 60px 60px 60px 60px 60px [text-end gutter-start] 60px [middle-end] 60px [page-end gutter-end] 1fr [screen-end];
+    grid-column-gap: 32px;
+  }
+
+  .grid {
+    grid-column-gap: 32px;
+  }
+}
+
+
+/* Get the citation styles for the appendix (not auto-injected on render since
+   we do our own rendering of the citation appendix) */
+
+d-appendix .citation-appendix,
+.d-appendix .citation-appendix {
+  font-size: 11px;
+  line-height: 15px;
+  border-left: 1px solid rgba(0, 0, 0, 0.1);
+  padding-left: 18px;
+  border: 1px solid rgba(0,0,0,0.1);
+  background: rgba(0, 0, 0, 0.02);
+  padding: 10px 18px;
+  border-radius: 3px;
+  color: rgba(150, 150, 150, 1);
+  overflow: hidden;
+  margin-top: -12px;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}
+
+/* Include appendix styles here so they can be overridden */
+
+d-appendix {
+  contain: layout style;
+  font-size: 0.8em;
+  line-height: 1.7em;
+  margin-top: 60px;
+  margin-bottom: 0;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+  color: rgba(0,0,0,0.5);
+  padding-top: 60px;
+  padding-bottom: 48px;
+}
+
+d-appendix h3 {
+  grid-column: page-start / text-start;
+  font-size: 15px;
+  font-weight: 500;
+  margin-top: 1em;
+  margin-bottom: 0;
+  color: rgba(0,0,0,0.65);
+}
+
+d-appendix h3 + * {
+  margin-top: 1em;
+}
+
+d-appendix ol {
+  padding: 0 0 0 15px;
+}
+
+@media (min-width: 768px) {
+  d-appendix ol {
+    padding: 0 0 0 30px;
+    margin-left: -30px;
+  }
+}
+
+d-appendix li {
+  margin-bottom: 1em;
+}
+
+d-appendix a {
+  color: rgba(0, 0, 0, 0.6);
+}
+
+d-appendix > * {
+  grid-column: text;
+}
+
+d-appendix > d-footnote-list,
+d-appendix > d-citation-list,
+d-appendix > distill-appendix {
+  grid-column: screen;
+}
+
+/* Include footnote styles here so they can be overridden */
+
+d-footnote-list {
+  contain: layout style;
+}
+
+d-footnote-list > * {
+  grid-column: text;
+}
+
+d-footnote-list a.footnote-backlink {
+  color: rgba(0,0,0,0.3);
+  padding-left: 0.5em;
+}
+
+
+
+/* Anchor.js */
+
+.anchorjs-link {
+  /*transition: all .25s linear; */
+  text-decoration: none;
+  border-bottom: none;
+}
+*:hover > .anchorjs-link {
+  margin-left: -1.125em !important;
+  text-decoration: none;
+  border-bottom: none;
+}
+
+/* Social footer */
+
+.social_footer {
+  margin-top: 30px;
+  margin-bottom: 0;
+  color: rgba(0,0,0,0.67);
+}
+
+.disqus-comments {
+  margin-right: 30px;
+}
+
+.disqus-comment-count {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.4);
+  cursor: pointer;
+}
+
+#disqus_thread {
+  margin-top: 30px;
+}
+
+.article-sharing a {
+  border-bottom: none;
+  margin-right: 8px;
+}
+
+.article-sharing a:hover {
+  border-bottom: none;
+}
+
+.sidebar-section.subscribe {
+  font-size: 12px;
+  line-height: 1.6em;
+}
+
+.subscribe p {
+  margin-bottom: 0.5em;
+}
+
+
+.article-footer .subscribe {
+  font-size: 15px;
+  margin-top: 45px;
+}
+
+
+.sidebar-section.custom {
+  font-size: 12px;
+  line-height: 1.6em;
+}
+
+.custom p {
+  margin-bottom: 0.5em;
+}
+
+/* Styles for listing layout (hide title) */
+.layout-listing d-title, .layout-listing .d-title {
+  display: none;
+}
+
+/* Styles for posts lists (not auto-injected) */
+
+
+.posts-with-sidebar {
+  padding-left: 45px;
+  padding-right: 45px;
+}
+
+.posts-list .description h2,
+.posts-list .description p {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", Arial, sans-serif;
+}
+
+.posts-list .description h2 {
+  font-weight: 700;
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.posts-list h2.post-tag {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+  padding-bottom: 12px;
+}
+.posts-list {
+  margin-top: 60px;
+  margin-bottom: 24px;
+}
+
+.posts-list .post-preview {
+  text-decoration: none;
+  overflow: hidden;
+  display: block;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  padding: 24px 0;
+}
+
+.post-preview-last {
+  border-bottom: none !important;
+}
+
+.posts-list .posts-list-caption {
+  grid-column: screen;
+  font-weight: 400;
+}
+
+.posts-list .post-preview h2 {
+  margin: 0 0 6px 0;
+  line-height: 1.2em;
+  font-style: normal;
+  font-size: 24px;
+}
+
+.posts-list .post-preview p {
+  margin: 0 0 12px 0;
+  line-height: 1.4em;
+  font-size: 16px;
+}
+
+.posts-list .post-preview .thumbnail {
+  box-sizing: border-box;
+  margin-bottom: 24px;
+  position: relative;
+  max-width: 500px;
+}
+.posts-list .post-preview img {
+  width: 100%;
+  display: block;
+}
+
+.posts-list .metadata {
+  font-size: 12px;
+  line-height: 1.4em;
+  margin-bottom: 18px;
+}
+
+.posts-list .metadata > * {
+  display: inline-block;
+}
+
+.posts-list .metadata .publishedDate {
+  margin-right: 2em;
+}
+
+.posts-list .metadata .dt-authors {
+  display: block;
+  margin-top: 0.3em;
+  margin-right: 2em;
+}
+
+.posts-list .dt-tags {
+  display: block;
+  line-height: 1em;
+}
+
+.posts-list .dt-tags .dt-tag {
+  display: inline-block;
+  color: rgba(0,0,0,0.6);
+  padding: 0.3em 0.4em;
+  margin-right: 0.2em;
+  margin-bottom: 0.4em;
+  font-size: 60%;
+  border: 1px solid rgba(0,0,0,0.2);
+  border-radius: 3px;
+  text-transform: uppercase;
+  font-weight: 500;
+}
+
+.posts-list img {
+  opacity: 1;
+}
+
+.posts-list img[data-src] {
+  opacity: 0;
+}
+
+.posts-more {
+  clear: both;
+}
+
+
+.posts-sidebar {
+  font-size: 16px;
+}
+
+.posts-sidebar h3 {
+  font-size: 16px;
+  margin-top: 0;
+  margin-bottom: 0.5em;
+  font-weight: 400;
+  text-transform: uppercase;
+}
+
+.sidebar-section {
+  margin-bottom: 30px;
+}
+
+.categories ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.categories li {
+  color: rgba(0, 0, 0, 0.8);
+  margin-bottom: 0;
+}
+
+.categories li>a {
+  border-bottom: none;
+}
+
+.categories li>a:hover {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.4);
+}
+
+.categories .active {
+  font-weight: 600;
+}
+
+.categories .category-count {
+  color: rgba(0, 0, 0, 0.4);
+}
+
+
+@media(min-width: 768px) {
+  .posts-list .post-preview h2 {
+    font-size: 26px;
+  }
+  .posts-list .post-preview .thumbnail {
+    float: right;
+    width: 30%;
+    margin-bottom: 0;
+  }
+  .posts-list .post-preview .description {
+    float: left;
+    width: 45%;
+  }
+  .posts-list .post-preview .metadata {
+    float: left;
+    width: 20%;
+    margin-top: 8px;
+  }
+  .posts-list .post-preview p {
+    margin: 0 0 12px 0;
+    line-height: 1.5em;
+    font-size: 16px;
+  }
+  .posts-with-sidebar .posts-list {
+    float: left;
+    width: 75%;
+  }
+  .posts-with-sidebar .posts-sidebar {
+    float: right;
+    width: 20%;
+    margin-top: 60px;
+    padding-top: 24px;
+    padding-bottom: 24px;
+  }
+}
+
+
+/* Improve display for browsers without grid (IE/Edge <= 15) */
+
+.downlevel {
+  line-height: 1.6em;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", Arial, sans-serif;
+  margin: 0;
+}
+
+.downlevel .d-title {
+  padding-top: 6rem;
+  padding-bottom: 1.5rem;
+}
+
+.downlevel .d-title h1 {
+  font-size: 50px;
+  font-weight: 700;
+  line-height: 1.1em;
+  margin: 0 0 0.5rem;
+}
+
+.downlevel .d-title p {
+  font-weight: 300;
+  font-size: 1.2rem;
+  line-height: 1.55em;
+  margin-top: 0;
+}
+
+.downlevel .d-byline {
+  padding-top: 0.8em;
+  padding-bottom: 0.8em;
+  font-size: 0.8rem;
+  line-height: 1.8em;
+}
+
+.downlevel .section-separator {
+  border: none;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.downlevel .d-article {
+  font-size: 1.06rem;
+  line-height: 1.7em;
+  padding-top: 1rem;
+  padding-bottom: 2rem;
+}
+
+
+.downlevel .d-appendix {
+  padding-left: 0;
+  padding-right: 0;
+  max-width: none;
+  font-size: 0.8em;
+  line-height: 1.7em;
+  margin-bottom: 0;
+  color: rgba(0,0,0,0.5);
+  padding-top: 40px;
+  padding-bottom: 48px;
+}
+
+.downlevel .footnotes ol {
+  padding-left: 13px;
+}
+
+.downlevel .base-grid,
+.downlevel .distill-header,
+.downlevel .d-title,
+.downlevel .d-abstract,
+.downlevel .d-article,
+.downlevel .d-appendix,
+.downlevel .distill-appendix,
+.downlevel .d-byline,
+.downlevel .d-footnote-list,
+.downlevel .d-citation-list,
+.downlevel .distill-footer,
+.downlevel .appendix-bottom,
+.downlevel .posts-container {
+  padding-left: 40px;
+  padding-right: 40px;
+}
+
+@media(min-width: 768px) {
+  .downlevel .base-grid,
+  .downlevel .distill-header,
+  .downlevel .d-title,
+  .downlevel .d-abstract,
+  .downlevel .d-article,
+  .downlevel .d-appendix,
+  .downlevel .distill-appendix,
+  .downlevel .d-byline,
+  .downlevel .d-footnote-list,
+  .downlevel .d-citation-list,
+  .downlevel .distill-footer,
+  .downlevel .appendix-bottom,
+  .downlevel .posts-container {
+  padding-left: 150px;
+  padding-right: 150px;
+  max-width: 900px;
+}
+}
+
+.downlevel pre code {
+  display: block;
+  border-left: 2px solid rgba(0, 0, 0, .1);
+  padding: 0 0 0 20px;
+  font-size: 14px;
+}
+
+.downlevel code, .downlevel pre {
+  color: black;
+  background: none;
+  font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+  text-align: left;
+  white-space: pre;
+  word-spacing: normal;
+  word-break: normal;
+  word-wrap: normal;
+  line-height: 1.5;
+
+  -moz-tab-size: 4;
+  -o-tab-size: 4;
+  tab-size: 4;
+
+  -webkit-hyphens: none;
+  -moz-hyphens: none;
+  -ms-hyphens: none;
+  hyphens: none;
+}
+
+.downlevel .posts-list .post-preview {
+  color: inherit;
+}
+
+
+
+</style>
+
+<script type="application/javascript">
+
+function is_downlevel_browser() {
+  if (bowser.isUnsupportedBrowser({ msie: "12", msedge: "16"},
+                                 window.navigator.userAgent)) {
+    return true;
+  } else {
+    return window.load_distill_framework === undefined;
+  }
+}
+
+// show body when load is complete
+function on_load_complete() {
+
+  // add anchors
+  if (window.anchors) {
+    window.anchors.options.placement = 'left';
+    window.anchors.add('d-article > h2, d-article > h3, d-article > h4, d-article > h5');
+  }
+
+
+  // set body to visible
+  document.body.style.visibility = 'visible';
+
+  // force redraw for leaflet widgets
+  if (window.HTMLWidgets) {
+    var maps = window.HTMLWidgets.findAll(".leaflet");
+    $.each(maps, function(i, el) {
+      var map = this.getMap();
+      map.invalidateSize();
+      map.eachLayer(function(layer) {
+        if (layer instanceof L.TileLayer)
+          layer.redraw();
+      });
+    });
+  }
+
+  // trigger 'shown' so htmlwidgets resize
+  $('d-article').trigger('shown');
+}
+
+function init_distill() {
+
+  init_common();
+
+  // create front matter
+  var front_matter = $('<d-front-matter></d-front-matter>');
+  $('#distill-front-matter').wrap(front_matter);
+
+  // create d-title
+  $('.d-title').changeElementType('d-title');
+
+  // create d-byline
+  var byline = $('<d-byline></d-byline>');
+  $('.d-byline').replaceWith(byline);
+
+  // create d-article
+  var article = $('<d-article></d-article>');
+  $('.d-article').wrap(article).children().unwrap();
+
+  // move posts container into article
+  $('.posts-container').appendTo($('d-article'));
+
+  // create d-appendix
+  $('.d-appendix').changeElementType('d-appendix');
+
+  // flag indicating that we have appendix items
+  var appendix = $('.appendix-bottom').children('h3').length > 0;
+
+  // replace footnotes with <d-footnote>
+  $('.footnote-ref').each(function(i, val) {
+    appendix = true;
+    var href = $(this).attr('href');
+    var id = href.replace('#', '');
+    var fn = $('#' + id);
+    var fn_p = $('#' + id + '>p');
+    fn_p.find('.footnote-back').remove();
+    var text = fn_p.html();
+    var dtfn = $('<d-footnote></d-footnote>');
+    dtfn.html(text);
+    $(this).replaceWith(dtfn);
+  });
+  // remove footnotes
+  $('.footnotes').remove();
+
+  // move refs into #references-listing
+  $('#references-listing').replaceWith($('#refs'));
+
+  $('h1.appendix, h2.appendix').each(function(i, val) {
+    $(this).changeElementType('h3');
+  });
+  $('h3.appendix').each(function(i, val) {
+    var id = $(this).attr('id');
+    $('.d-contents a[href="#' + id + '"]').parent().remove();
+    appendix = true;
+    $(this).nextUntil($('h1, h2, h3')).addBack().appendTo($('d-appendix'));
+  });
+
+  // show d-appendix if we have appendix content
+  $("d-appendix").css('display', appendix ? 'grid' : 'none');
+
+  // localize layout chunks to just output
+  $('.layout-chunk').each(function(i, val) {
+
+    // capture layout
+    var layout = $(this).attr('data-layout');
+
+    // apply layout to markdown level block elements
+    var elements = $(this).children().not('details, div.sourceCode, pre, script');
+    elements.each(function(i, el) {
+      var layout_div = $('<div class="' + layout + '"></div>');
+      if (layout_div.hasClass('shaded')) {
+        var shaded_content = $('<div class="shaded-content"></div>');
+        $(this).wrap(shaded_content);
+        $(this).parent().wrap(layout_div);
+      } else {
+        $(this).wrap(layout_div);
+      }
+    });
+
+
+    // unwrap the layout-chunk div
+    $(this).children().unwrap();
+  });
+
+  // remove code block used to force  highlighting css
+  $('.distill-force-highlighting-css').parent().remove();
+
+  // remove empty line numbers inserted by pandoc when using a
+  // custom syntax highlighting theme
+  $('code.sourceCode a:empty').remove();
+
+  // load distill framework
+  load_distill_framework();
+
+  // wait for window.distillRunlevel == 4 to do post processing
+  function distill_post_process() {
+
+    if (!window.distillRunlevel || window.distillRunlevel < 4)
+      return;
+
+    // hide author/affiliations entirely if we have no authors
+    var front_matter = JSON.parse($("#distill-front-matter").html());
+    var have_authors = front_matter.authors && front_matter.authors.length > 0;
+    if (!have_authors)
+      $('d-byline').addClass('hidden');
+
+    // article with toc class
+    $('.d-contents').parent().addClass('d-article-with-toc');
+
+    // strip links that point to #
+    $('.authors-affiliations').find('a[href="#"]').removeAttr('href');
+
+    // add orcid ids
+    $('.authors-affiliations').find('.author').each(function(i, el) {
+      var orcid_id = front_matter.authors[i].orcidID;
+      if (orcid_id) {
+        var a = $('<a></a>');
+        a.attr('href', 'https://orcid.org/' + orcid_id);
+        var img = $('<img></img>');
+        img.addClass('orcid-id');
+        img.attr('alt', 'ORCID ID');
+        img.attr('src','data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA2ZpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYwIDYxLjEzNDc3NywgMjAxMC8wMi8xMi0xNzozMjowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDo1N0NEMjA4MDI1MjA2ODExOTk0QzkzNTEzRjZEQTg1NyIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDozM0NDOEJGNEZGNTcxMUUxODdBOEVCODg2RjdCQ0QwOSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDozM0NDOEJGM0ZGNTcxMUUxODdBOEVCODg2RjdCQ0QwOSIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgQ1M1IE1hY2ludG9zaCI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOkZDN0YxMTc0MDcyMDY4MTE5NUZFRDc5MUM2MUUwNEREIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOjU3Q0QyMDgwMjUyMDY4MTE5OTRDOTM1MTNGNkRBODU3Ii8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+84NovQAAAR1JREFUeNpiZEADy85ZJgCpeCB2QJM6AMQLo4yOL0AWZETSqACk1gOxAQN+cAGIA4EGPQBxmJA0nwdpjjQ8xqArmczw5tMHXAaALDgP1QMxAGqzAAPxQACqh4ER6uf5MBlkm0X4EGayMfMw/Pr7Bd2gRBZogMFBrv01hisv5jLsv9nLAPIOMnjy8RDDyYctyAbFM2EJbRQw+aAWw/LzVgx7b+cwCHKqMhjJFCBLOzAR6+lXX84xnHjYyqAo5IUizkRCwIENQQckGSDGY4TVgAPEaraQr2a4/24bSuoExcJCfAEJihXkWDj3ZAKy9EJGaEo8T0QSxkjSwORsCAuDQCD+QILmD1A9kECEZgxDaEZhICIzGcIyEyOl2RkgwAAhkmC+eAm0TAAAAABJRU5ErkJggg==');
+        a.append(img);
+        $(this).append(a);
+      }
+    });
+
+    // hide elements of author/affiliations grid that have no value
+    function hide_byline_column(caption) {
+      $('d-byline').find('h3:contains("' + caption + '")').parent().css('visibility', 'hidden');
+    }
+
+    // affiliations
+    var have_affiliations = false;
+    for (var i = 0; i<front_matter.authors.length; ++i) {
+      var author = front_matter.authors[i];
+      if (author.affiliation !== "&nbsp;") {
+        have_affiliations = true;
+        break;
+      }
+    }
+    if (!have_affiliations)
+      $('d-byline').find('h3:contains("Affiliations")').css('visibility', 'hidden');
+
+    // published date
+    if (!front_matter.publishedDate)
+      hide_byline_column("Published");
+
+    // document object identifier
+    var doi = $('d-byline').find('h3:contains("DOI")');
+    var doi_p = doi.next().empty();
+    if (!front_matter.doi) {
+      // if we have a citation and valid citationText then link to that
+      if ($('#citation').length > 0 && front_matter.citationText) {
+        doi.html('Citation');
+        $('<a href="#citation"></a>')
+          .text(front_matter.citationText)
+          .appendTo(doi_p);
+      } else {
+        hide_byline_column("DOI");
+      }
+    } else {
+      $('<a></a>')
+         .attr('href', "https://doi.org/" + front_matter.doi)
+         .html(front_matter.doi)
+         .appendTo(doi_p);
+    }
+
+     // change plural form of authors/affiliations
+    if (front_matter.authors.length === 1) {
+      var grid = $('.authors-affiliations');
+      grid.children('h3:contains("Authors")').text('Author');
+      grid.children('h3:contains("Affiliations")').text('Affiliation');
+    }
+
+    // remove d-appendix and d-footnote-list local styles
+    $('d-appendix > style:first-child').remove();
+    $('d-footnote-list > style:first-child').remove();
+
+    // move appendix-bottom entries to the bottom
+    $('.appendix-bottom').appendTo('d-appendix').children().unwrap();
+    $('.appendix-bottom').remove();
+
+    // hoverable references
+    $('span.citation[data-cites]').each(function() {
+      var refs = $(this).attr('data-cites').split(" ");
+      var refHtml = refs.map(function(ref) {
+        return "<p>" + $('#ref-' + ref).html() + "</p>";
+      }).join("\n");
+      window.tippy(this, {
+        allowHTML: true,
+        content: refHtml,
+        maxWidth: 500,
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'light-border',
+        placement: 'bottom-start'
+      });
+    });
+
+    // clear polling timer
+    clearInterval(tid);
+
+    // show body now that everything is ready
+    on_load_complete();
+  }
+
+  var tid = setInterval(distill_post_process, 50);
+  distill_post_process();
+
+}
+
+function init_downlevel() {
+
+  init_common();
+
+   // insert hr after d-title
+  $('.d-title').after($('<hr class="section-separator"/>'));
+
+  // check if we have authors
+  var front_matter = JSON.parse($("#distill-front-matter").html());
+  var have_authors = front_matter.authors && front_matter.authors.length > 0;
+
+  // manage byline/border
+  if (!have_authors)
+    $('.d-byline').remove();
+  $('.d-byline').after($('<hr class="section-separator"/>'));
+  $('.d-byline a').remove();
+
+  // remove toc
+  $('.d-contents').remove();
+
+  // move appendix elements
+  $('h1.appendix, h2.appendix').each(function(i, val) {
+    $(this).changeElementType('h3');
+  });
+  $('h3.appendix').each(function(i, val) {
+    $(this).nextUntil($('h1, h2, h3')).addBack().appendTo($('.d-appendix'));
+  });
+
+
+  // inject headers into references and footnotes
+  var refs_header = $('<h3></h3>');
+  refs_header.text('References');
+  $('#refs').prepend(refs_header);
+
+  var footnotes_header = $('<h3></h3');
+  footnotes_header.text('Footnotes');
+  $('.footnotes').children('hr').first().replaceWith(footnotes_header);
+
+  // move appendix-bottom entries to the bottom
+  $('.appendix-bottom').appendTo('.d-appendix').children().unwrap();
+  $('.appendix-bottom').remove();
+
+  // remove appendix if it's empty
+  if ($('.d-appendix').children().length === 0)
+    $('.d-appendix').remove();
+
+  // prepend separator above appendix
+  $('.d-appendix').before($('<hr class="section-separator" style="clear: both"/>'));
+
+  // trim code
+  $('pre>code').each(function(i, val) {
+    $(this).html($.trim($(this).html()));
+  });
+
+  // move posts-container right before article
+  $('.posts-container').insertBefore($('.d-article'));
+
+  $('body').addClass('downlevel');
+
+  on_load_complete();
+}
+
+
+function init_common() {
+
+  // jquery plugin to change element types
+  (function($) {
+    $.fn.changeElementType = function(newType) {
+      var attrs = {};
+
+      $.each(this[0].attributes, function(idx, attr) {
+        attrs[attr.nodeName] = attr.nodeValue;
+      });
+
+      this.replaceWith(function() {
+        return $("<" + newType + "/>", attrs).append($(this).contents());
+      });
+    };
+  })(jQuery);
+
+  // prevent underline for linked images
+  $('a > img').parent().css({'border-bottom' : 'none'});
+
+  // mark non-body figures created by knitr chunks as 100% width
+  $('.layout-chunk').each(function(i, val) {
+    var figures = $(this).find('img, .html-widget');
+    if ($(this).attr('data-layout') !== "l-body") {
+      figures.css('width', '100%');
+    } else {
+      figures.css('max-width', '100%');
+      figures.filter("[width]").each(function(i, val) {
+        var fig = $(this);
+        fig.css('width', fig.attr('width') + 'px');
+      });
+
+    }
+  });
+
+  // auto-append index.html to post-preview links in file: protocol
+  // and in rstudio ide preview
+  $('.post-preview').each(function(i, val) {
+    if (window.location.protocol === "file:")
+      $(this).attr('href', $(this).attr('href') + "index.html");
+  });
+
+  // get rid of index.html references in header
+  if (window.location.protocol !== "file:") {
+    $('.distill-site-header a[href]').each(function(i,val) {
+      $(this).attr('href', $(this).attr('href').replace("index.html", "./"));
+    });
+  }
+
+  // add class to pandoc style tables
+  $('tr.header').parent('thead').parent('table').addClass('pandoc-table');
+  $('.kable-table').children('table').addClass('pandoc-table');
+
+  // add figcaption style to table captions
+  $('caption').parent('table').addClass("figcaption");
+
+  // initialize posts list
+  if (window.init_posts_list)
+    window.init_posts_list();
+
+  // implmement disqus comment link
+  $('.disqus-comment-count').click(function() {
+    window.headroom_prevent_pin = true;
+    $('#disqus_thread').toggleClass('hidden');
+    if (!$('#disqus_thread').hasClass('hidden')) {
+      var offset = $(this).offset();
+      $(window).resize();
+      $('html, body').animate({
+        scrollTop: offset.top - 35
+      });
+    }
+  });
+}
+
+document.addEventListener('DOMContentLoaded', function() {
+  if (is_downlevel_browser())
+    init_downlevel();
+  else
+    window.addEventListener('WebComponentsReady', init_distill);
+});
+
+</script>
+
+<!--/radix_placeholder_distill-->
+  <script src="../../site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+  <script src="../../site_libs/popper-2.6.0/popper.min.js"></script>
+  <link href="../../site_libs/tippy-6.2.7/tippy.css" rel="stylesheet" />
+  <link href="../../site_libs/tippy-6.2.7/tippy-light-border.css" rel="stylesheet" />
+  <script src="../../site_libs/tippy-6.2.7/tippy.umd.min.js"></script>
+  <script src="../../site_libs/anchor-4.2.2/anchor.min.js"></script>
+  <script src="../../site_libs/bowser-1.9.3/bowser.min.js"></script>
+  <script src="../../site_libs/webcomponents-2.0.0/webcomponents.js"></script>
+  <script src="../../site_libs/distill-2.2.21/template.v2.js"></script>
+  <!--radix_placeholder_site_in_header-->
+<!--/radix_placeholder_site_in_header-->
+
+
+</head>
+
+<body>
+
+<!--radix_placeholder_front_matter-->
+
+<script id="distill-front-matter" type="text/json">
+{"title":"R Bootcamp #4: Functions in R","description":"An introduction to basic R functions, data types, and structures","authors":[{"author":"Ciara Sterbenz","authorURL":{},"affiliation":"&nbsp;","affiliationURL":"#","orcidID":""}],"publishedDate":"2021-11-29T00:00:00.000-08:00","citationText":"Sterbenz, 2021"}
+</script>
+
+<!--/radix_placeholder_front_matter-->
+<!--radix_placeholder_navigation_before_body-->
+<header class="header header--fixed" role="banner">
+<nav class="distill-site-nav distill-site-header">
+<div class="nav-left">
+<a href="../../index.html" class="title">UCLA PoliSci Methods Mavens Resources</a>
+</div>
+<div class="nav-right">
+<a href="../../index.html">Home</a>
+<a href="../../about.html">Mavens</a>
+<a href="javascript:void(0);" class="nav-toggle">&#9776;</a>
+</div>
+</nav>
+</header>
+<!--/radix_placeholder_navigation_before_body-->
+<!--radix_placeholder_site_before_body-->
+<!--/radix_placeholder_site_before_body-->
+
+<div class="d-title">
+<h1>R Bootcamp #4: Functions in R</h1>
+<!--radix_placeholder_categories-->
+<div class="dt-tags">
+  <a href="../../index.html#category:bootcamp" class="dt-tag">bootcamp</a>
+</div>
+<!--/radix_placeholder_categories-->
+<p>An introduction to basic R functions, data types, and structures</p>
+</div>
+
+<div class="d-byline">
+  Ciara Sterbenz true 
+  
+<br/>2021-11-29
+</div>
+
+<div class="d-article">
+<div class="d-contents d-contents-float">
+<nav class="l-text toc figcaption" id="TOC">
+<h3>Contents</h3>
+<ul>
+<li><a href="#functions-in-r">Functions in R</a><ul>
+<li><a href="#video-walk-through">Video Walk through</a></li>
+<li><a href="#conceptually-what-are-functions-what-are-they-good-for-anyway">Conceptually, what are functions? What are they good for anyway?</a></li>
+<li><a href="#basic-syntax-with-functions">Basic Syntax with Functions</a><ul>
+<li><a href="#digging-into-the-details">Digging into the Details:</a></li>
+</ul></li>
+<li><a href="#functions-and-scope">Functions and “Scope”</a></li>
+<li><a href="#debugging">Debugging</a><ul>
+<li><a href="#printing">Printing</a></li>
+</ul></li>
+<li><a href="#power-in-infinite-flexibility">Power in Infinite Flexibility</a></li>
+</ul></li>
+</ul>
+</nav>
+</div>
+<h1 id="functions-in-r">Functions in R</h1>
+<p>Hello again! Today we’re going to dive into the idea of functions in coding. Functions are a fundamental building block in coding generally, and you’ve already encountered and used many of them written by others (e.g. <code>dpylr::select()</code>, <code>base::mean()</code>etc). Today we’ll discuss why they are so useful, how they work, and how to write and use your very own functions!</p>
+<h2 id="video-walk-through">Video Walk through</h2>
+<iframe width="560" height="315" src="https://youtu.be/xRtU0uoGfhw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+</iframe>
+<h2 id="conceptually-what-are-functions-what-are-they-good-for-anyway">Conceptually, what are functions? What are they good for anyway?</h2>
+<p>Generally, a function does all the regular coding you’re used to but is built using abstract, general data structures rather than with concrete (locally-loaded/stored) data. What does this mean? In brief, a function is a shell of code that is written in general terms and by itself does do anything or manipulate any data until we later “run it.” When we write a function, we are actually telling the computer to store the code that we write in memory for later use. For example:</p>
+<p>This makes functions really convenient for repeated use when we want to do the same basic thing many times, typically also with different data. Instead of copy-pasting the same code over and over, we can simply re-run a function over and over. This is both easier to follow and read, and more “safe” in terms of avoiding mistakes. A general rule of thumb in coding is that if you have to copy-paste any significant portion of code to do something two or more times, you’re better off just building a function and running it twice! This is good coding practice for two reasons: first, it actually saves you time in the long run (it may seem unneccesary and difficult at first but the more practice you get the more use you’ll see for it), and second, it saves you from your own silly mistakes when copy-pasting. You’d be amazing at how easy it is cause yourself all kind of headaches simply because you accidentally wrote over an object you needed by accident, mislabel something, or forget to change some small part of the code when copy-pasting. You lose a lot of time (and sanity) tracking down these small mistakes because they often don’t actually produce any code errors, just wrong answers.</p>
+<h2 id="basic-syntax-with-functions">Basic Syntax with Functions</h2>
+<p>Anything in R that has <code>...()</code> is a function. For example, when we type <code>test()</code> we are indicating to R that ‘test’ is a function it should already know about and we want it to now run that function. If we were to type just <code>test</code> on the other hand, we would be indicating to R that ‘test’ is an object, an actual piece of computer memory that stores some data.</p>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='co'>#since I have not told R what "test" or "test()" may be both of these lines cause an error</span>
+<span class='co'>#you can see from the error messages how "()" changes R's expectations</span>
+<span class='va'>test</span>
+</code></pre>
+</div>
+<pre><code>Error in eval(expr, envir, enclos): object &#39;test&#39; not found</code></pre>
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='fu'>test</span><span class='op'>(</span><span class='op'>)</span>
+</code></pre>
+</div>
+<pre><code>Error in test(): could not find function &quot;test&quot;</code></pre>
+</div>
+<p>The general structure of all functions is the following:</p>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='va'>my_function</span> <span class='op'>&lt;-</span> <span class='kw'>function</span><span class='op'>(</span><span class='va'>arguments</span><span class='op'>)</span> <span class='op'>{</span>
+    <span class='co'>#fill in your genius code here </span>
+    <span class='kw'><a href='https://rdrr.io/r/base/function.html'>return</a></span><span class='op'>(</span><span class='va'>output</span><span class='op'>)</span>
+<span class='op'>}</span>
+<span class='va'>my_function</span>
+</code></pre>
+</div>
+</div>
+<p>First let’s just break down each component and then below I’ll give you some more specific things to keep in mind. First on the left we have the nam</p>
+<p><code>my_function</code> - Function’s Name: just as with objects, we give a function a name so we can later refer back to it. In the above example, I’ve very creatively named it “my_function”.</p>
+<p><code>my_function &lt;- function(...) {}</code> - this tells R that the object <code>my_function</code> will be a function. You can see from the handy-color coding in your text editor that both the <code>function()</code> and <code>return()</code> language are somewhat special. This syntax is specially reserved in <code>R</code> to contstruct functions and all functions that you write must have this structure. Elements inside the paratheses <code>function(...)</code> are referred to as inputs or arguments of the function - they are the data you “pass in” for the function to work with. Everything inside the following brackets <code>{}</code>forms the the shell code that the function will perform when it is later called.</p>
+<p><code>return(...)</code> - this tells R what to “return” from the function. In other words, when we run the function what does it give us back?</p>
+<h3 id="digging-into-the-details">Digging into the Details:</h3>
+<h4 id="calling-vs-declaring-a-function">1. Calling vs Declaring a Function</h4>
+<p>Functions are always a two stage process. First, we “declare the function,” writing out the function contructor syntax and filling in all the code we want the function to perform, then itializing the function by running this constructor code. At this stage all we are doing is telling R to save to memory the contents of your function. It WILL NOT run/evaluate any of the internal code at this stage. Here we are simply writing the basic shell that we will use later. The second stage is where we “call the function.” This is where we actually ask <code>R</code> to run the code inside the function and thus where we would need to supply the arguments (that do not have a default, more on this below) in order for things to work.</p>
+<p>What does this mean practically? If you have any errors, <code>R</code> will not find them until you call the function and try and run it on actual data! Additionally, if you edit your function in any way, you must declare it again (rerun the constructor code) for <code>R</code> to know you made any changes (we have to resave the code it associates with object that is our function name).</p>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='co'>#let's say I have a typo and write "frist" inside the function, instead of "first" </span>
+<span class='co'>#since R has no idea what "frist" is, this will produce an error</span>
+<span class='co'>#but just establishing the function and running the following reports no errors !</span>
+<span class='co'># why? because R has not actually evaluated the code</span>
+<span class='va'>broken</span> <span class='op'>&lt;-</span> <span class='kw'>function</span><span class='op'>(</span><span class='va'>first</span>, <span class='va'>second</span><span class='op'>)</span> <span class='op'>{</span>
+    <span class='va'>sum</span> <span class='op'>&lt;-</span> <span class='va'>frist</span><span class='op'>+</span><span class='va'>second</span>
+    <span class='kw'><a href='https://rdrr.io/r/base/function.html'>return</a></span><span class='op'>(</span><span class='va'>sum</span><span class='op'>)</span>
+<span class='op'>}</span>
+<span class='co'>#when we actually call the function however, it complains that it has no idea what "frist" is</span>
+<span class='fu'>broken</span><span class='op'>(</span><span class='fl'>3</span>,<span class='fl'>2</span><span class='op'>)</span>
+</code></pre>
+</div>
+<pre><code>Error in broken(3, 2): object &#39;frist&#39; not found</code></pre>
+</div>
+<h4 id="arguments---input-data-for-the-function-to-use">2. Arguments - input data for the function to use</h4>
+<p>Most functions require some input data that they’ll use internally. Others may not require any inputs. For example “Sys.time()” doesn’t need any data to tell you what time it is. When arguments are written without a “default” they are mandatory and the function will not run without them. For these arguments, <code>R</code> is expecting some form of input data and will immediately halt if it doesn’t recieve it when the function is called. On the other hand, we can set arguments with a default when we set up the function such that the function will proceed when called even without any inputted data using the default value. Of course, the user can always overwrite a default in “function call,” meaning that any the argument passed in when the function is called will always trump the default.</p>
+<p>Note that in <code>R</code> you do not specify what type/class of data these arguments will be unlike some other languages. This enables great flexibility! An example is near the end of this post.</p>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='co'>#I set x to have a default of 4</span>
+<span class='co'>#I have set y to have no default</span>
+<span class='co'>#this function "returns" or gives back to the user simply the sum of x and y</span>
+<span class='va'>ex_1</span> <span class='op'>&lt;-</span> <span class='kw'>function</span><span class='op'>(</span><span class='va'>x</span> <span class='op'>=</span> <span class='fl'>4</span>, <span class='va'>y</span><span class='op'>)</span> <span class='op'>{</span>
+    <span class='va'>out</span> <span class='op'>&lt;-</span> <span class='va'>x</span><span class='op'>+</span><span class='va'>y</span>
+    <span class='kw'><a href='https://rdrr.io/r/base/function.html'>return</a></span><span class='op'>(</span><span class='va'>out</span><span class='op'>)</span>
+<span class='op'>}</span>
+<span class='co'>#because I do not tell it what y is going to be it gives me an error</span>
+<span class='fu'>ex_1</span><span class='op'>(</span><span class='op'>)</span>
+</code></pre>
+</div>
+<pre><code>Error in ex_1(): argument &quot;y&quot; is missing, with no default</code></pre>
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='co'>#when I do not tell it what x is, it's no problem however! just uses default x = 4</span>
+<span class='fu'>ex_1</span><span class='op'>(</span>y <span class='op'>=</span> <span class='fl'>1</span><span class='op'>)</span>
+</code></pre>
+</div>
+<pre><code>[1] 5</code></pre>
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='co'>#i can always overwrite a default directly in the "function call"</span>
+<span class='fu'>ex_1</span><span class='op'>(</span>x <span class='op'>=</span> <span class='fl'>0</span>, y <span class='op'>=</span> <span class='fl'>1</span><span class='op'>)</span>
+</code></pre>
+</div>
+<pre><code>[1] 1</code></pre>
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='co'>#some functions have no inputs</span>
+<span class='fu'><a href='https://rdrr.io/r/base/timezones.html'>Sys.timezone</a></span><span class='op'>(</span><span class='op'>)</span>
+</code></pre>
+</div>
+<pre><code>[1] &quot;America/Los_Angeles&quot;</code></pre>
+</div>
+<p>Arguments can be “passed in” to a function by position/order or by name. Passing in arguments by order allows you to avoid a little typing when “calling the function” (running it). Instead of fully typing out the names of each of the functions arguments, you can pass in data directly according to the order specified in when the function was declared and <code>R</code> will rely the order of the arguments to figure out what inputted data refers to what function argument.</p>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='co'>#this funciton returns simply the fraction of the first over the second argument</span>
+<span class='va'>ex_2</span> <span class='op'>&lt;-</span> <span class='kw'>function</span><span class='op'>(</span><span class='va'>first</span>, <span class='va'>second</span><span class='op'>)</span> <span class='op'>{</span>
+    <span class='kw'><a href='https://rdrr.io/r/base/function.html'>return</a></span><span class='op'>(</span><span class='va'>first</span><span class='op'>/</span><span class='va'>second</span><span class='op'>)</span>
+<span class='op'>}</span>
+<span class='co'>#passing in based on order assumes first = 1, second = 3</span>
+<span class='fu'>ex_2</span><span class='op'>(</span><span class='fl'>1</span>,<span class='fl'>3</span><span class='op'>)</span>
+</code></pre>
+</div>
+<pre><code>[1] 0.3333333</code></pre>
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='fu'>ex_2</span><span class='op'>(</span><span class='fl'>3</span>,<span class='fl'>1</span><span class='op'>)</span>
+</code></pre>
+</div>
+<pre><code>[1] 3</code></pre>
+</div>
+<p>Alternatively, you can always use the name of the arguments to clearly tell R what refers to what. This might be a tad more typing, but it also allows you to not worry about remembering what the correct order should be.</p>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='co'>#passing in based on name</span>
+<span class='co'>#most intuitively:</span>
+<span class='fu'>ex_2</span><span class='op'>(</span>first <span class='op'>=</span> <span class='fl'>1</span>, second <span class='op'>=</span> <span class='fl'>2</span><span class='op'>)</span>
+</code></pre>
+</div>
+<pre><code>[1] 0.5</code></pre>
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='co'>#but this also works,</span>
+<span class='fu'>ex_2</span><span class='op'>(</span>second <span class='op'>=</span> <span class='fl'>2</span>, first <span class='op'>=</span> <span class='fl'>1</span><span class='op'>)</span>
+</code></pre>
+</div>
+<pre><code>[1] 0.5</code></pre>
+</div>
+<h4 id="outputs">3. Outputs</h4>
+<p>Functions always “return” some “outputs/values”. This is very general - you can return anything from a simple number all the way to a very complex plot and you can return as many objects as you want of whatever type! This is the real power of a function - we can get a bunch of coding done all in one nice clean chunk and return back all kinds of results all at onee time.</p>
+<p>In general, it is good coding practice to explicitly state what to return using <code>return(...)</code>. That said sometimes you may see functions that don’t have an explicit return statement. <code>R</code> is kind enough to assume that it should return the most recently computed object (the last line), but this is poor coding practice (most other languages would not let you do this). I really don’t recommend skipping the explicit return statement. For readability of your code and to avoid any confusion between what R does for you and what you want it to do, just stick with <code>return()</code></p>
+<p>In <code>R</code>, if you want to return multiple objects, you must wrap them inside a list object. Notice that naming the elements of your list will enable you to use the more convenient <code>$</code> syntax rather than the gross <code>[[...]][...]</code> of lists.</p>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='co'>#nicely labeled means i can access the different results using $</span>
+<span class='va'>ex_3</span> <span class='op'>&lt;-</span> <span class='kw'>function</span><span class='op'>(</span><span class='va'>a</span>, <span class='va'>b</span>, <span class='va'>c</span><span class='op'>)</span> <span class='op'>{</span>
+    <span class='va'>sum</span> <span class='op'>&lt;-</span> <span class='va'>a</span><span class='op'>+</span><span class='va'>b</span><span class='op'>+</span><span class='va'>c</span>
+    <span class='va'>frac</span> <span class='op'>&lt;-</span> <span class='op'>(</span><span class='va'>a</span><span class='op'>+</span><span class='va'>b</span><span class='op'>)</span><span class='op'>/</span><span class='va'>c</span>
+    <span class='va'>out</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/list.html'>list</a></span><span class='op'>(</span>sum <span class='op'>=</span> <span class='va'>sum</span>, 
+                fraction <span class='op'>=</span> <span class='va'>frac</span><span class='op'>)</span>
+    <span class='kw'><a href='https://rdrr.io/r/base/function.html'>return</a></span><span class='op'>(</span><span class='va'>out</span><span class='op'>)</span>
+<span class='op'>}</span>
+<span class='va'>test</span> <span class='op'>&lt;-</span> <span class='fu'>ex_3</span><span class='op'>(</span><span class='fl'>1</span>,<span class='fl'>1</span>,<span class='fl'>2</span><span class='op'>)</span>
+<span class='fu'><a href='https://rdrr.io/r/base/class.html'>class</a></span><span class='op'>(</span><span class='va'>test</span><span class='op'>)</span>
+</code></pre>
+</div>
+<pre><code>[1] &quot;list&quot;</code></pre>
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='va'>test</span><span class='op'>$</span><span class='va'>fraction</span>
+</code></pre>
+</div>
+<pre><code>[1] 1</code></pre>
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='va'>test</span><span class='op'>$</span><span class='va'>sum</span>
+</code></pre>
+</div>
+<pre><code>[1] 4</code></pre>
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='va'>test</span>
+</code></pre>
+</div>
+<pre><code>$sum
+[1] 4
+
+$fraction
+[1] 1</code></pre>
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='co'>#more lazy now, means more headache in the [[]][] indexing later :(</span>
+<span class='va'>ex_3</span> <span class='op'>&lt;-</span> <span class='kw'>function</span><span class='op'>(</span><span class='va'>a</span>, <span class='va'>b</span>, <span class='va'>c</span><span class='op'>)</span> <span class='op'>{</span>
+    <span class='va'>sum</span> <span class='op'>&lt;-</span> <span class='va'>a</span><span class='op'>+</span><span class='va'>b</span><span class='op'>+</span><span class='va'>c</span>
+    <span class='va'>frac</span> <span class='op'>&lt;-</span> <span class='op'>(</span><span class='va'>a</span><span class='op'>+</span><span class='va'>b</span><span class='op'>)</span><span class='op'>/</span><span class='va'>c</span>
+    <span class='kw'><a href='https://rdrr.io/r/base/function.html'>return</a></span><span class='op'>(</span><span class='fu'><a href='https://rdrr.io/r/base/list.html'>list</a></span><span class='op'>(</span><span class='va'>sum</span>,<span class='va'>frac</span><span class='op'>)</span><span class='op'>)</span>
+<span class='op'>}</span>
+<span class='va'>test</span> <span class='op'>&lt;-</span> <span class='fu'>ex_3</span><span class='op'>(</span><span class='fl'>1</span>,<span class='fl'>1</span>,<span class='fl'>2</span><span class='op'>)</span>
+<span class='fu'><a href='https://rdrr.io/r/base/class.html'>class</a></span><span class='op'>(</span><span class='va'>test</span><span class='op'>)</span>
+</code></pre>
+</div>
+<pre><code>[1] &quot;list&quot;</code></pre>
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='va'>test</span>
+</code></pre>
+</div>
+<pre><code>[[1]]
+[1] 4
+
+[[2]]
+[1] 1</code></pre>
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='va'>test</span><span class='op'>[[</span><span class='fl'>1</span><span class='op'>]</span><span class='op'>]</span>
+</code></pre>
+</div>
+<pre><code>[1] 4</code></pre>
+</div>
+<p>Here’s an example of how <code>R</code> will take the last line of your code as your intended output if you do not explicitly state it. Again, I wouldn’t recommend this, but you may sometimes see others do it.</p>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='co'>#note that if i do not explictly write a return statement we get the last line of code</span>
+<span class='va'>frac</span> <span class='op'>&lt;-</span> <span class='kw'>function</span><span class='op'>(</span><span class='va'>A</span>,<span class='va'>B</span><span class='op'>)</span> <span class='op'>{</span> 
+    <span class='co'>#we can add code here that R will run, but it will not output because it is not returned!</span>
+    <span class='va'>A</span><span class='op'>+</span><span class='va'>B</span>
+    <span class='co'>#if we don't use return R will assume the last line of code is what we want</span>
+    <span class='va'>A</span><span class='op'>/</span><span class='va'>B</span>
+<span class='op'>}</span>
+<span class='fu'><a href='https://rdrr.io/r/grDevices/plotmath.html'>frac</a></span><span class='op'>(</span><span class='fl'>6</span>,<span class='fl'>7</span><span class='op'>)</span>
+</code></pre>
+</div>
+<pre><code>[1] 0.8571429</code></pre>
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='co'>#note also the vector-friendly format of R:</span>
+<span class='co'>#we can also easily ask for:</span>
+<span class='fu'><a href='https://rdrr.io/r/grDevices/plotmath.html'>frac</a></span><span class='op'>(</span>A <span class='op'>=</span> <span class='fl'>4</span>, B <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='fl'>1</span>,<span class='fl'>2</span>,<span class='fl'>3</span><span class='op'>)</span><span class='op'>)</span>
+</code></pre>
+</div>
+<pre><code>[1] 4.000000 2.000000 1.333333</code></pre>
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='co'>#or</span>
+<span class='fu'><a href='https://rdrr.io/r/grDevices/plotmath.html'>frac</a></span><span class='op'>(</span>A <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='fl'>1</span>,<span class='fl'>2</span>,<span class='fl'>3</span><span class='op'>)</span>, B <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='fl'>1</span>,<span class='fl'>2</span>,<span class='fl'>3</span><span class='op'>)</span><span class='op'>)</span>
+</code></pre>
+</div>
+<pre><code>[1] 1 1 1</code></pre>
+</div>
+<h4 id="a-deeper-dive-into-the-need-for-list-outputs">A Deeper Dive into the Need for List Outputs</h4>
+<p>The basic reason for having to wrap everything in a list, is beyond your current need-to-know level of comp-sci, but if you’re interested, the basic reason is as follows: computers require data assigned to the same piece of memory to be of the same type. This means that you can not save both a number and a character to the same piece of data (you might recall <code>R</code> will just turn the number into a character so they match). This is an issue for functions because they return a single object that is associated with a single piece of computer memory. So if you want your function to output data of different types, what do you do?! Enter lists to save the day! Recall that list objects allow you to combine all different types of data in one object. The way they do this is by actually saving each data type to separate piece of memory so they can stay different types, but then saving the pointers (locations) to each of these separate objects in the list object the same piece of memory. Since pointers are all of the same type, we can save them all together!</p>
+<h4 id="namespace">4. Namespace</h4>
+<p>In fancy codespeak, we refer to the name of a function as its “namespace.” Because <code>R</code> is very flexible, it will allow you to write directly over almost anything you want. You should thereofre be careful not to overwrite the “namespace” of standard/commonly used functions. In other words, there is nothing preventing you from doing the following:</p>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='va'>ex</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='fl'>5</span>, <span class='fl'>4</span><span class='op'>)</span>
+<span class='co'>#standard base R mean function returns the mean of a vector</span>
+<span class='fu'><a href='https://rdrr.io/r/base/mean.html'>mean</a></span><span class='op'>(</span><span class='va'>ex</span><span class='op'>)</span>
+</code></pre>
+</div>
+<pre><code>[1] 4.5</code></pre>
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='va'>mean</span> <span class='op'>&lt;-</span> <span class='kw'>function</span><span class='op'>(</span><span class='op'>)</span> <span class='op'>{</span>
+    <span class='kw'><a href='https://rdrr.io/r/base/function.html'>return</a></span><span class='op'>(</span><span class='st'>"Don't do this!"</span><span class='op'>)</span>
+<span class='op'>}</span>
+<span class='fu'><a href='https://rdrr.io/r/base/mean.html'>mean</a></span><span class='op'>(</span><span class='op'>)</span>
+</code></pre>
+</div>
+<pre><code>[1] &quot;Don&#39;t do this!&quot;</code></pre>
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='co'>#and this will now produce an error because R thinks "mean()" takes NO arguments/inputs</span>
+<span class='fu'><a href='https://rdrr.io/r/base/mean.html'>mean</a></span><span class='op'>(</span><span class='va'>ex</span><span class='op'>)</span>
+</code></pre>
+</div>
+<pre><code>Error in mean(ex): unused argument (ex)</code></pre>
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='co'>#we can save ourselves by clearly indicating the namespace by telling R what</span>
+<span class='co'>#package/environment to look in... but this is bad just don't do it</span>
+<span class='fu'>base</span><span class='fu'>::</span><span class='fu'><a href='https://rdrr.io/r/base/mean.html'>mean</a></span><span class='op'>(</span><span class='va'>ex</span><span class='op'>)</span>
+</code></pre>
+</div>
+<pre><code>[1] 4.5</code></pre>
+</div>
+<p>Another thing to note quickly is that all packages are just someone else’s function that you are loading into your own environment! You can now understand some common warning you have perhaps encountered when loading packages.</p>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='co'>#now we can understand these warnings!</span>
+<span class='kw'><a href='https://rdrr.io/r/base/library.html'>library</a></span><span class='op'>(</span><span class='va'><a href='https://dplyr.tidyverse.org'>dplyr</a></span><span class='op'>)</span>
+</code></pre>
+</div>
+</div>
+<p>“The following objects are masked from package:…” indicates that you just loaded a package that has a function with the same namespace! R somewhat infamously has a lot of older packages that supply functions of the same name, but that do totally different things. For example when we load <code>dplyr</code>, we are told “filter” and “lag” are masked from “package:stats.” In other words,<code>dpylr</code> has a function, <code>dplyr::filter</code>, that is writing over the function <code>stats::filter</code>. Sometimes, you may also encounter error messages where <code>R</code> is clearly confused about which function it should be using because they both have the same name. To clarify which namespace you are referring to you can use the following syntax: <code>packagename::functionname()</code>. This may happen annoyingly frequently for <code>dplyr::select</code> unfortunately.</p>
+<h2 id="functions-and-scope">Functions and “Scope”</h2>
+<p>The last step to understand functions requires diving a bit into the weeds, but bear with me. Let’s back up a little bit: recalling our basics, we learned we can that in code, we “initialize” an object by telling the computer we will use some name, say “x” or “my_dataframe” etc to refer back to some particular amount computer memory that will store a type of data among the fundamental data types. For us in R you will nearly always be working with logical (often called boolean), numeric (decimal or whole), character (often called string). In more traditional forms of coding, code is written and understood in a hierarchical structure, with different levels that expand upward and build on those below, like a russian-doll. In these languages, when we initialize data, the computer therefore also needs to be told how “accessible” this data is - at what level is the object accessible? only the current level, or above it at the higher, more expanded levels? This is referred to as “scope” - the “scope” of an object is where it is defined/accessible.</p>
+<p>In R, we (thankfully) do not use this hierarchical structure! So if this is a little confusing fear not! Instead nearly everything is “globally defined.” This mean that the object is the “global environment,” meaning it’s accessible everywhere and we don’t have to worry about any of this heirarchical business and different permissions to use different objects. The downside of this is that it’s very easy to write over something later on in your code without realizing it. For example, on line 15 you may use “x” to refer to a big vector of data and then accidentally later on line 142 you again use “x” to refer to just the number 4, and now you’ve written over your big vector of data and lost it. Having everything globally defined in R is therefore a double edged sword - it saves a lots of pain when declaring data and setting things up, but it can lead to careless mistakes that are a big headache.</p>
+<p>So why does this matter for functions? Functions are one of the very few places in R where scope actually comes into play and things are NOT globally defined anymore. Instead, the scope of all the code internal to a function (so everythign inside the brackets <code>{}</code>) is limited to the function itself. More concretely for example, if inside a funciton I declare a variable “my_var”, I run the function, and then try and use “my_var” outside the function, R will immedaitely complain it has no idea what “my_var” is. This variable was defined inside the fucntion and its scope is limited to the funciton, it is not accessible or knwon beyond the internals of the function. This is beneficial because it means we can run functions and use names inside of it that may be the same as ones we outside the function (globally), but we will not overwrite our original objects!</p>
+<p>It’s super important to understand the scope of functions to understand how they work and how you can use them. You will not be able to access any data from inside the function unless you pass it out specifically!</p>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='co'>#globally defined x</span>
+<span class='va'>x</span> <span class='op'>&lt;-</span> <span class='fl'>4</span>
+<span class='va'>x</span>
+</code></pre>
+</div>
+<pre><code>[1] 4</code></pre>
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='co'>#now what happens if i try and write-over x inside a function?</span>
+<span class='va'>test_scope</span> <span class='op'>&lt;-</span> <span class='kw'>function</span><span class='op'>(</span><span class='op'>)</span> <span class='op'>{</span>
+    <span class='va'>x</span> <span class='op'>=</span> <span class='fl'>6</span>
+    <span class='va'>internal_only</span> <span class='op'>=</span> <span class='st'>"won't see the light of day"</span>
+    <span class='kw'><a href='https://rdrr.io/r/base/function.html'>return</a></span><span class='op'>(</span><span class='va'>x</span><span class='op'>)</span>
+<span class='op'>}</span>
+<span class='co'>#returns 6 as expected</span>
+<span class='fu'>test_scope</span><span class='op'>(</span><span class='op'>)</span>
+</code></pre>
+</div>
+<pre><code>[1] 6</code></pre>
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='co'>#did I write over x?? No! hurrah</span>
+<span class='va'>x</span>
+</code></pre>
+</div>
+<pre><code>[1] 4</code></pre>
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='co'>#I only write over x if i do so explicitly in the global environment</span>
+<span class='va'>x</span> <span class='op'>&lt;-</span> <span class='fu'>test_scope</span><span class='op'>(</span><span class='op'>)</span>
+<span class='va'>x</span>
+</code></pre>
+</div>
+<pre><code>[1] 6</code></pre>
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='co'>#does R know what internal_only is? Nope! </span>
+<span class='co'>#even though it was created by the function when i ran it,</span>
+<span class='co'>#it's lost forever because i did not return it</span>
+<span class='va'>internal_only</span>
+</code></pre>
+</div>
+<pre><code>Error in eval(expr, envir, enclos): object &#39;internal_only&#39; not found</code></pre>
+</div>
+<p>However… I am compelled to also point out that in <code>R</code> though what a function does internally is not accessible in the global environment (e.g. i can’t access <code>internal_only</code> outside the function), the reverse is not true. Functions can access and use what is in the global environment (though as we saw it can not write over objects in the global environment). This is a bit of a quirk in <code>R</code> and would not work in more strictly hierarchical languages. What does this mean practically? You can write a function that uses a global variable that is not passed in as an argument! This, however, is generally very poor coding practice. Why? If the globally defined variable is removed or changes value, the output of the function will change or not even run. And yet, we changed nothign about the function itself! This type of inconsistency is highly vulnerable to user-error and is dangerous for that reason. I’d say it should pretty much always be avoided. (Only in advance use cases where functions are nestsed within eachother would I recommend ever doing this)</p>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='co'>#globally define my_var</span>
+<span class='va'>my_var</span> <span class='op'>&lt;-</span> <span class='fl'>1234</span>
+
+<span class='va'>bad_ex</span> <span class='op'>&lt;-</span> <span class='kw'>function</span><span class='op'>(</span><span class='va'>w</span><span class='op'>)</span> <span class='op'>{</span>
+    <span class='co'>#i can still access my_var inside the functino even though it wasn't passed in!</span>
+    <span class='va'>prod</span> <span class='op'>=</span> <span class='va'>w</span><span class='op'>*</span><span class='va'>my_var</span>
+    <span class='kw'><a href='https://rdrr.io/r/base/function.html'>return</a></span><span class='op'>(</span><span class='va'>prod</span><span class='op'>)</span>
+<span class='op'>}</span>
+<span class='co'>#this will still run no problem :O</span>
+<span class='fu'>bad_ex</span><span class='op'>(</span>w <span class='op'>=</span> <span class='fl'>1</span><span class='op'>)</span>
+</code></pre>
+</div>
+<pre><code>[1] 1234</code></pre>
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='co'>#now i go code 100 more lines and at somepoint redefine my_var</span>
+<span class='va'>my_var</span> <span class='op'>=</span> <span class='fl'>12</span>
+<span class='co'>#and i run my exact same code as before, nothing about the function has changed]</span>
+<span class='co'>#but i get a different answer </span>
+<span class='fu'>bad_ex</span><span class='op'>(</span>w <span class='op'>=</span> <span class='fl'>1</span><span class='op'>)</span>
+</code></pre>
+</div>
+<pre><code>[1] 12</code></pre>
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='co'>#even worse,i removed my_var from the global environmnet the function breaks entirely</span>
+<span class='fu'><a href='https://rdrr.io/r/base/rm.html'>rm</a></span><span class='op'>(</span><span class='va'>my_var</span><span class='op'>)</span>
+<span class='fu'>bad_ex</span><span class='op'>(</span>w<span class='op'>=</span><span class='fl'>1</span><span class='op'>)</span>
+</code></pre>
+</div>
+<pre><code>Error in bad_ex(w = 1): object &#39;my_var&#39; not found</code></pre>
+</div>
+<h2 id="debugging">Debugging</h2>
+<p>This brings us to debugging. Debugging within a function might seem difficult at first because when we declare the function, R does not evaluate the internal code and will not find any errors. However, when we do later call the function and run the internal code, we don’t get to see R go line by line, making it quite hard to see where things broke down when we run into errors. Typically If you get an error, but can’t tell what’s causing it and then go back inside the function to try to run any of the internal code on its own that uses the functions arguments, R will complain that it doesn’t know what data you’re using since you didn’t pass it in! Yikes… So how to debug a function?</p>
+<p>Typically, the approach is to run the internal code of the function yourself line by line to find the issue. In order for this to work, you will of course need to initialze the arguments because otherwise R will have no idea what they are. I recomend explicitly initializing them inside the function at the very top. By doing this, you’re actually making everything global! This allows you to find where issues are, but also means you’ve just stored all the code and objects internal to the function to the global environment. Once you’ve fixed the issue, tgherefore, you should therefore remove these objects from the global environment and be sure to remember to delete the lines at the top where you initialized the argument. Otherwise, you’re function will disregard the user-specified arguments every time.</p>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='co'>################ Debugging</span>
+<span class='co'>#so this won't run because "broken" tries to use "C" before we've declared it</span>
+<span class='co'>#but if you just run the function R will not complain!</span>
+<span class='va'>broken</span> <span class='op'>&lt;-</span> <span class='kw'>function</span><span class='op'>(</span><span class='va'>A</span>,<span class='va'>B</span><span class='op'>)</span> <span class='op'>{</span>
+    <span class='va'>sum</span> <span class='op'>=</span> <span class='va'>A</span><span class='op'>+</span><span class='va'>B</span>
+    <span class='va'>prod</span> <span class='op'>=</span> <span class='va'>A</span><span class='op'>*</span><span class='va'>B</span>
+    <span class='va'>broken</span> <span class='op'>=</span> <span class='va'>A</span><span class='op'>/</span><span class='va'>B</span> <span class='op'>-</span> <span class='va'>C</span>
+    <span class='va'>C</span> <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/MathFun.html'>sqrt</a></span><span class='op'>(</span><span class='va'>A</span><span class='op'>^</span><span class='fl'>2</span> <span class='op'>+</span> <span class='va'>B</span><span class='op'>^</span><span class='fl'>2</span><span class='op'>)</span>
+    <span class='kw'><a href='https://rdrr.io/r/base/function.html'>return</a></span><span class='op'>(</span><span class='fu'><a href='https://rdrr.io/r/base/list.html'>list</a></span><span class='op'>(</span>sum <span class='op'>=</span> <span class='va'>sum</span>, 
+                prod <span class='op'>=</span> <span class='va'>prod</span>,
+                broken <span class='op'>=</span> <span class='va'>broken</span>,
+                C<span class='op'>=</span> <span class='va'>C</span><span class='op'>)</span><span class='op'>)</span>
+<span class='op'>}</span>
+<span class='co'>#R only finds the issue when you ask it to actually run the function</span>
+<span class='fu'>broken</span><span class='op'>(</span><span class='fl'>6</span>,<span class='fl'>7</span><span class='op'>)</span>
+</code></pre>
+</div>
+<pre><code>Error in A/B - C: non-numeric argument to binary operator</code></pre>
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='co'>#this error mesage is a little opaque and let's say </span>
+<span class='co'>#it is not immediately obvious to you what went wrong, what to do? </span>
+<span class='co'>#if you try to run line by line within the function:</span>
+<span class='co'>#R will complain that it has no idea what A and B are</span>
+<span class='co'>#So go back inside your function and direcly declare A and B </span>
+<span class='co'>#then test your code</span>
+<span class='va'>broken</span> <span class='op'>&lt;-</span> <span class='kw'>function</span><span class='op'>(</span><span class='va'>A</span>,<span class='va'>B</span><span class='op'>)</span> <span class='op'>{</span>
+    <span class='co'># XXXX REMINDER DELETE LATER  AND RM FROM EVIVORNMENT</span>
+    <span class='va'>A</span> <span class='op'>=</span> <span class='fl'>1</span>; <span class='va'>B</span> <span class='op'>=</span> <span class='fl'>2</span>
+    <span class='co'>#now R knows what A and B are and we can run the following lines internally</span>
+    <span class='va'>sum</span> <span class='op'>=</span> <span class='va'>A</span><span class='op'>+</span><span class='va'>B</span> <span class='co'>#good</span>
+    <span class='va'>prod</span> <span class='op'>=</span> <span class='va'>A</span><span class='op'>*</span><span class='va'>B</span> <span class='co'>#good</span>
+    <span class='va'>C</span> <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/MathFun.html'>sqrt</a></span><span class='op'>(</span><span class='va'>A</span><span class='op'>^</span><span class='fl'>2</span> <span class='op'>+</span> <span class='va'>B</span><span class='op'>^</span><span class='fl'>2</span><span class='op'>)</span> 
+    <span class='va'>broken</span> <span class='op'>=</span> <span class='va'>A</span><span class='op'>/</span><span class='va'>B</span> <span class='op'>-</span> <span class='va'>C</span> <span class='co'># ah ha we found the problem!</span>
+    <span class='kw'><a href='https://rdrr.io/r/base/function.html'>return</a></span><span class='op'>(</span><span class='fu'><a href='https://rdrr.io/r/base/list.html'>list</a></span><span class='op'>(</span>sum <span class='op'>=</span> <span class='va'>sum</span>, 
+                prod <span class='op'>=</span> <span class='va'>prod</span>,
+                broken <span class='op'>=</span> <span class='va'>broken</span>,
+                C<span class='op'>=</span> <span class='va'>C</span><span class='op'>)</span><span class='op'>)</span>
+<span class='op'>}</span>
+<span class='fu'>broken</span><span class='op'>(</span><span class='fl'>1</span>,<span class='fl'>2</span><span class='op'>)</span>
+</code></pre>
+</div>
+<pre><code>$sum
+[1] 3
+
+$prod
+[1] 2
+
+$broken
+[1] -1.736068
+
+$C
+[1] 2.236068</code></pre>
+</div>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='co'>#so now we found the problem you'd fix it and BE SURE TO DELETE the stored inputs</span>
+<span class='co'>#both from your environment and from the function code</span>
+<span class='co'>#otherwise everytime you run your function it will use what you set internally and ignore the inputs you have </span>
+<span class='fu'><a href='https://rdrr.io/r/base/rm.html'>rm</a></span><span class='op'>(</span><span class='va'>A</span>, <span class='va'>B</span><span class='op'>)</span>
+<span class='va'>fixed</span><span class='op'>&lt;-</span> <span class='kw'>function</span><span class='op'>(</span><span class='va'>A</span>,<span class='va'>B</span><span class='op'>)</span> <span class='op'>{</span>
+    <span class='va'>sum</span> <span class='op'>=</span> <span class='va'>A</span><span class='op'>+</span><span class='va'>B</span> 
+    <span class='va'>prod</span> <span class='op'>=</span> <span class='va'>A</span><span class='op'>*</span><span class='va'>B</span> 
+    <span class='va'>C</span> <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/MathFun.html'>sqrt</a></span><span class='op'>(</span><span class='va'>A</span><span class='op'>^</span><span class='fl'>2</span> <span class='op'>+</span> <span class='va'>B</span><span class='op'>^</span><span class='fl'>2</span><span class='op'>)</span> 
+    <span class='va'>broken</span> <span class='op'>=</span> <span class='va'>A</span><span class='op'>/</span><span class='va'>B</span> <span class='op'>-</span> <span class='va'>C</span> 
+    
+    <span class='kw'><a href='https://rdrr.io/r/base/function.html'>return</a></span><span class='op'>(</span><span class='fu'><a href='https://rdrr.io/r/base/list.html'>list</a></span><span class='op'>(</span>sum <span class='op'>=</span> <span class='va'>sum</span>, 
+                prod <span class='op'>=</span> <span class='va'>prod</span>,
+                broken <span class='op'>=</span> <span class='va'>broken</span>,
+                C<span class='op'>=</span> <span class='va'>C</span><span class='op'>)</span><span class='op'>)</span>
+<span class='op'>}</span>
+<span class='fu'>fixed</span><span class='op'>(</span><span class='fl'>6</span>,<span class='fl'>7</span><span class='op'>)</span>
+</code></pre>
+</div>
+<pre><code>$sum
+[1] 13
+
+$prod
+[1] 42
+
+$broken
+[1] -8.362402
+
+$C
+[1] 9.219544</code></pre>
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='co'>#note ofc that if you don't delete those internal inputs though: you're stuck with 6 and 7</span>
+<span class='va'>dontdothis</span><span class='op'>&lt;-</span> <span class='kw'>function</span><span class='op'>(</span><span class='va'>A</span>,<span class='va'>B</span><span class='op'>)</span> <span class='op'>{</span>
+    <span class='va'>A</span> <span class='op'>=</span> <span class='fl'>6</span>
+    <span class='va'>B</span> <span class='op'>=</span> <span class='fl'>7</span>
+    <span class='va'>sum</span> <span class='op'>=</span> <span class='va'>A</span><span class='op'>+</span><span class='va'>B</span> 
+    <span class='va'>prod</span> <span class='op'>=</span> <span class='va'>A</span><span class='op'>*</span><span class='va'>B</span> 
+    <span class='va'>C</span> <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/MathFun.html'>sqrt</a></span><span class='op'>(</span><span class='va'>A</span><span class='op'>^</span><span class='fl'>2</span> <span class='op'>+</span> <span class='va'>B</span><span class='op'>^</span><span class='fl'>2</span><span class='op'>)</span> 
+    <span class='va'>broken</span> <span class='op'>=</span> <span class='va'>A</span><span class='op'>/</span><span class='va'>B</span> <span class='op'>-</span> <span class='va'>C</span> 
+    
+    <span class='kw'><a href='https://rdrr.io/r/base/function.html'>return</a></span><span class='op'>(</span><span class='fu'><a href='https://rdrr.io/r/base/list.html'>list</a></span><span class='op'>(</span>sum <span class='op'>=</span> <span class='va'>sum</span>, 
+                prod <span class='op'>=</span> <span class='va'>prod</span>,
+                broken <span class='op'>=</span> <span class='va'>broken</span>,
+                C<span class='op'>=</span> <span class='va'>C</span><span class='op'>)</span><span class='op'>)</span>
+<span class='op'>}</span>
+<span class='fu'>dontdothis</span><span class='op'>(</span><span class='fl'>5</span>,<span class='fl'>6</span><span class='op'>)</span> <span class='co'>#still gives us the results for 6 and 7!</span>
+</code></pre>
+</div>
+<pre><code>$sum
+[1] 13
+
+$prod
+[1] 42
+
+$broken
+[1] -8.362402
+
+$C
+[1] 9.219544</code></pre>
+</div>
+<h3 id="printing">Printing</h3>
+<p>You can also help yourself debug by printing things out. This way you can see what the function was doing internally even when it was called. This is especially handy if your function has a long computation time and you want some updates or verification it’s going according to plan.</p>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='co'>#use either paste() or cat()</span>
+<span class='co'>#cat() is nice because it prints out like a warning/error message would without quotes</span>
+<span class='co'>#print() prints out as if something is being returned notice the [1]</span>
+<span class='co'>#and is a little less clean to use but works just fine</span>
+<span class='co'>#not a major difference so do whatever you like</span>
+<span class='va'>testprint</span> <span class='op'>&lt;-</span> <span class='kw'>function</span><span class='op'>(</span><span class='va'>A</span>,<span class='va'>B</span><span class='op'>)</span> <span class='op'>{</span>
+    <span class='co'>#when using cat you need to tell it to start a new line for the next print out using \n</span>
+    <span class='fu'><a href='https://rdrr.io/r/base/cat.html'>cat</a></span><span class='op'>(</span><span class='st'>"cat: A is"</span>, <span class='va'>A</span>, <span class='st'>"and B is"</span>, <span class='va'>B</span>, <span class='st'>"returning their sum: \n"</span><span class='op'>)</span>
+    <span class='co'>#print is a little uglier because c() turns 6 into a string since all elemnts</span>
+    <span class='co'>#of a vector must be the same type (all strings or "characters" in R)</span>
+    <span class='fu'><a href='https://rdrr.io/r/base/print.html'>print</a></span><span class='op'>(</span>x <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>"print + c(): A is"</span>,<span class='va'>A</span>, <span class='st'>"B is"</span><span class='op'>)</span><span class='op'>)</span>
+    <span class='co'>#or cleaning that up a bit by also using paste()</span>
+    <span class='fu'><a href='https://rdrr.io/r/base/print.html'>print</a></span><span class='op'>(</span>x <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/paste.html'>paste</a></span><span class='op'>(</span><span class='st'>"print + paste(): A is"</span>,<span class='va'>A</span>, <span class='st'>"B is"</span><span class='op'>)</span><span class='op'>)</span>
+    <span class='kw'><a href='https://rdrr.io/r/base/function.html'>return</a></span><span class='op'>(</span><span class='va'>A</span><span class='op'>+</span><span class='va'>B</span><span class='op'>)</span>
+<span class='op'>}</span>
+<span class='fu'>testprint</span><span class='op'>(</span><span class='fl'>4</span>,<span class='fl'>5</span><span class='op'>)</span>
+</code></pre>
+</div>
+<pre><code>cat: A is 4 and B is 5 returning their sum: 
+[1] &quot;print + c(): A is&quot; &quot;4&quot;                 &quot;B is&quot;             
+[1] &quot;print + paste(): A is 4 B is&quot;</code></pre>
+<pre><code>[1] 9</code></pre>
+</div>
+<h2 id="power-in-infinite-flexibility">Power in Infinite Flexibility</h2>
+<p>The real power of functions lies in their infinite flexibility. You can write a function to take in any input and give you any output!</p>
+<p>As a totally arbitrary example, I can write a function that will take generalized input object x and: - if it is a character, output the number of letters in it - if it is a single number return the log - if it is a vector return the mean and standard deviation - if it is a matrix return its inverse</p>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='va'>my_funct</span> <span class='op'>&lt;-</span> <span class='kw'>function</span><span class='op'>(</span><span class='va'>x</span><span class='op'>)</span> <span class='op'>{</span>
+    
+    <span class='kw'>if</span><span class='op'>(</span><span class='fu'><a href='https://rdrr.io/r/base/class.html'>class</a></span><span class='op'>(</span><span class='va'>x</span><span class='op'>)</span> <span class='op'>==</span> <span class='st'>"character"</span><span class='op'>)</span> <span class='op'>{</span>
+        <span class='kw'><a href='https://rdrr.io/r/base/function.html'>return</a></span><span class='op'>(</span><span class='fu'><a href='https://rdrr.io/r/base/nchar.html'>nchar</a></span><span class='op'>(</span><span class='va'>x</span><span class='op'>)</span><span class='op'>)</span>
+    <span class='op'>}</span> <span class='kw'>else</span> <span class='kw'>if</span><span class='op'>(</span><span class='fu'><a href='https://rdrr.io/r/base/class.html'>class</a></span><span class='op'>(</span><span class='va'>x</span><span class='op'>)</span> <span class='op'>==</span> <span class='st'>"numeric"</span> <span class='op'>&amp;</span> <span class='fu'><a href='https://rdrr.io/r/base/length.html'>length</a></span><span class='op'>(</span><span class='va'>x</span><span class='op'>)</span> <span class='op'>==</span> <span class='fl'>1</span><span class='op'>)</span> <span class='op'>{</span> 
+        <span class='co'>#issue 1: anticipate any issues with this?</span>
+        <span class='kw'><a href='https://rdrr.io/r/base/function.html'>return</a></span><span class='op'>(</span><span class='fu'><a href='https://rdrr.io/r/base/Log.html'>log</a></span><span class='op'>(</span><span class='va'>x</span><span class='op'>)</span><span class='op'>)</span>
+    <span class='op'>}</span> <span class='kw'>else</span> <span class='kw'>if</span><span class='op'>(</span><span class='fu'><a href='https://rdrr.io/r/base/class.html'>class</a></span><span class='op'>(</span><span class='va'>x</span><span class='op'>)</span> <span class='op'>==</span> <span class='st'>"numeric"</span><span class='op'>)</span> <span class='op'>{</span> 
+        <span class='co'>#is not character or numeric with length 1, but is numeric (must be vector)</span>
+        <span class='kw'><a href='https://rdrr.io/r/base/function.html'>return</a></span><span class='op'>(</span><span class='fu'><a href='https://rdrr.io/r/base/list.html'>list</a></span><span class='op'>(</span>sd <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/stats/sd.html'>sd</a></span><span class='op'>(</span><span class='va'>x</span><span class='op'>)</span>,
+                    mean <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/mean.html'>mean</a></span><span class='op'>(</span><span class='va'>x</span><span class='op'>)</span><span class='op'>)</span><span class='op'>)</span>
+    <span class='op'>}</span> <span class='kw'>else</span> <span class='op'>{</span>
+        <span class='co'>#is none of the above, we assume it's a matrix</span>
+        <span class='co'>#issue 2: any possible issues with this?</span>
+        <span class='kw'><a href='https://rdrr.io/r/base/function.html'>return</a></span><span class='op'>(</span><span class='fu'><a href='https://rdrr.io/r/base/solve.html'>solve</a></span><span class='op'>(</span><span class='va'>x</span><span class='op'>)</span><span class='op'>)</span>
+    <span class='op'>}</span>
+<span class='op'>}</span>
+<span class='fu'>my_funct</span><span class='op'>(</span><span class='st'>"hello there"</span><span class='op'>)</span>
+</code></pre>
+</div>
+<pre><code>[1] 11</code></pre>
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='fu'>my_funct</span><span class='op'>(</span><span class='fl'>4</span><span class='op'>)</span>
+</code></pre>
+</div>
+<pre><code>[1] 1.386294</code></pre>
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='fu'><a href='https://rdrr.io/r/base/Log.html'>log</a></span><span class='op'>(</span><span class='fl'>4</span><span class='op'>)</span>
+</code></pre>
+</div>
+<pre><code>[1] 1.386294</code></pre>
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='fu'>my_funct</span><span class='op'>(</span>x <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='fl'>1</span>,<span class='fl'>2</span>,<span class='fl'>3</span><span class='op'>)</span><span class='op'>)</span>
+</code></pre>
+</div>
+<pre><code>Error in mean(x): unused argument (x)</code></pre>
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='fu'>my_funct</span><span class='op'>(</span>x <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/matrix.html'>matrix</a></span><span class='op'>(</span><span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='fu'><a href='https://rdrr.io/r/stats/Normal.html'>rnorm</a></span><span class='op'>(</span><span class='fl'>9</span><span class='op'>)</span><span class='op'>)</span>, nrow <span class='op'>=</span> <span class='fl'>3</span>, ncol <span class='op'>=</span> <span class='fl'>3</span><span class='op'>)</span><span class='op'>)</span>
+</code></pre>
+</div>
+<pre><code>           [,1]        [,2]        [,3]
+[1,]  0.7490501 -0.18393441 -0.01632447
+[2,] -2.7717429 -0.55513587 -1.09812074
+[3,] 12.9005415 -0.04197352  6.06745685</code></pre>
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='co'>#issue 1?</span>
+<span class='fu'>my_funct</span><span class='op'>(</span><span class='op'>-</span><span class='fl'>1</span><span class='op'>)</span>
+</code></pre>
+</div>
+<pre><code>[1] NaN</code></pre>
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='co'>#issue 2?</span>
+<span class='fu'>my_funct</span><span class='op'>(</span>x <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/matrix.html'>matrix</a></span><span class='op'>(</span><span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='fu'><a href='https://rdrr.io/r/stats/Normal.html'>rnorm</a></span><span class='op'>(</span><span class='fl'>12</span><span class='op'>)</span><span class='op'>)</span>, nrow <span class='op'>=</span> <span class='fl'>3</span>, ncol <span class='op'>=</span> <span class='fl'>4</span><span class='op'>)</span><span class='op'>)</span>
+</code></pre>
+</div>
+<pre><code>Error in solve.default(x): &#39;a&#39; (3 x 4) must be square</code></pre>
+</div>
+<p>Congrats you made it to the very end! I encourage you to tinker around and try and write (and also break) your own functions to better understand how they work.</p>
+<div class="sourceCode" id="cb47"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
+<!--radix_placeholder_article_footer-->
+<!--/radix_placeholder_article_footer-->
+</div>
+
+<div class="d-appendix">
+</div>
+
+
+<!--radix_placeholder_site_after_body-->
+<!--/radix_placeholder_site_after_body-->
+<!--radix_placeholder_appendices-->
+<div class="appendix-bottom"></div>
+<!--/radix_placeholder_appendices-->
+<!--radix_placeholder_navigation_after_body-->
+<!--/radix_placeholder_navigation_after_body-->
+
+</body>
+
+</html>
