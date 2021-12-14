@@ -20,7 +20,7 @@ Hello again! Today we're going to dive into the idea of functions in coding. Fun
 
 ## Video Walk through
 
-<iframe width="560" height="315" src="https://youtu.be/xRtU0uoGfhw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://youtu.be/j0TJcH99a3M" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 
 ## Conceptually, what are functions? What are they good for anyway?
