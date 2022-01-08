@@ -1,0 +1,29 @@
+---
+title: "R Bootcamp Live"
+categories:
+  - bootcamp
+description: |
+  Recordings from R Bootcamp Live (Jan. 7-8)
+author:
+  - name: Derek Holliday
+    url: {}
+date: 2022-01-07
+output:
+  distill::distill_article:
+    self_contained: false
+    toc: true
+---
+
+Below are the recordings from the live version of R Bootcamp held Jan. 7-8 2022.
+
+### Day 1 Recording
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/VnPr0zlHfEQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+### Day 2 Recording
+
+*check back later!*
+
+
+
+

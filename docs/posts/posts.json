@@ -1,5 +1,24 @@
 [
   {
+    "path": "posts/2022-01-07-r-bootcamp-live/",
+    "title": "R Bootcamp Live",
+    "description": "Recordings from R Bootcamp Live (Jan. 7-8)",
+    "author": [
+      {
+        "name": "Derek Holliday",
+        "url": {}
+      }
+    ],
+    "date": "2022-01-07",
+    "categories": [
+      "bootcamp"
+    ],
+    "contents": "\r\n\r\nContents\r\nDay 1 Recording\r\nDay 2 Recording\r\n\r\nBelow are the recordings from the live version of R Bootcamp held Jan. 7-8 2022.\r\nDay 1 Recording\r\n\r\n\r\nDay 2 Recording\r\ncheck back later!\r\n\r\n\r\n\r\n",
+    "preview": {},
+    "last_modified": "2022-01-07T17:15:35-08:00",
+    "input_file": {}
+  },
+  {
     "path": "posts/2021-12-13-r-bootcamp-4-functions-in-r/",
     "title": "R Bootcamp #4: Functions in R",
     "description": "An introduction to basic R functions, data types, and structures",
