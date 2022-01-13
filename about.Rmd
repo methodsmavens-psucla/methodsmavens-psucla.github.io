@@ -17,16 +17,12 @@ In charge of routine site upkeep/content moderation.
 
 ## Derek Holliday - R Maven
 
-Derek is a 5th year graduate student in American Politics. His methodological interests include machine learning, text-as-data, and survey experiments.
-
 Office hours:
 
 -  Tues/Thurs 1-3:30PM (in-person Bunche 4337)
 -  Wed 10AM-12PM (Virtual, email for zoom link)
 
 Contact: deholliday **at** ucla **dot** edu
-
-Personal website: <a href="https://www.derekholliday.com" target="_blank">derekholliday.com</a>
 
 ## Ciara Sterbenz - Math Maven
 
@@ -54,7 +50,9 @@ Contact: alexhayes **at** ucla **dot** edu
 
 Office hours:
 
--  Tues 3-5:30PM (offline/online)
--  Fri 12-1PM / 2-5:30PM (online)
+-  Tues 9AM-12PM
+-  Wed 9AM-1PM
 
 Contact: doeun2+Rmaven **at** ucla **dot** edu
+
+Sign-up <a href="https://doeunkim.org/officehour2.html" target="_blank">HERE</a>
